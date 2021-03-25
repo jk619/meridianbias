@@ -1,6 +1,5 @@
 % JK 03/2021
 clear
-close all
 clc
 
 subjects = dir('./prfresultsmgz/');

@@ -1,9 +1,9 @@
 clear
 clc
-close
 
-% You can run s0_download_HCP.sh to download the data, otherwise the script
-% will ask you if you want matlab to do it
+
+% You can run download_HCP.sh to download the data, otherwise the script
+% will ask you if you want matlab to do it for you.
 
 if exist('prfresultsmgz','dir')
     

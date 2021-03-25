@@ -3,7 +3,6 @@ clear
 close all
 clc
 
-addpath(genpath('vistasoft'))
 subjects = dir('./prfresultsmgz/');
 subjects=subjects(~ismember({subjects.name},{'999997','999998','999999'}));
 subjects = {subjects.name};
@@ -12,7 +11,8 @@ subjects_char=char(subjects);
 ok=(isstrprop(subjects_char(:,1),'digit'));
 subjects = subjects(ok);
 
-hemi = {'lh';'rh'}
+hemi = {'lh';'rh'};
+
 width = 20;
 
 myamp = zeros(2,length(subjects),2);
@@ -57,7 +57,7 @@ for s = 1:length(subjects)
         
         
         %%
-        % Pick V1 roi only
+        % Pick V1  only
         myrois = (squeeze(atlas.vol == 1))';
         
         for hv = 1:2

@@ -104,7 +104,7 @@ end
 
 
 %%
-figure(1);
+
 
 
 mymeanbeta_nohemi = nanmean(myamp,4);
@@ -127,7 +127,7 @@ for v = 1 : length(moving)
 end
 
 %%
-figure(1)
+figure(2);clf
 
 mymeanperc = nanmean(assym_subj);
 mystdperc = nanstd(assym_subj,[],1)/sqrt(length(assym_subj));

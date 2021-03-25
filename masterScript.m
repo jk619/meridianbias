@@ -4,6 +4,7 @@ clc
 
 % You can run download_HCP.sh to download the data, otherwise the script
 % will ask you if you want matlab to do it for you.
+addpath(genpath('vistasoft'))
 
 if exist('prfresultsmgz','dir')
     
@@ -26,7 +27,6 @@ else
     
     
 end
-addpath(genpath('vistasoft'))
 
 % reproduce asymmetry for HCP dataset in Figure 3
 Fig3C

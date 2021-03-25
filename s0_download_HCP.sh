@@ -1,5 +1,7 @@
 [ -f prfresultsmgz.zip ] || curl -L --output "prfresultsmgz.zip"  https://osf.io/tqprz/download
 [ -d prfresultsmgz ] || unzip prfresultsmgz.zip
+[ -f prfresultsmgz.zip ] || rm prfresultsmgz.zip
+
 [ -d benson_atlas ] || mkdir benson_atlas
 
 

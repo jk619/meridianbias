@@ -13,7 +13,7 @@ else
     
     if strcomp(str,'Y')
         
-        system('sh s0_download_HCP.sh')
+        system('sh download_HCP.sh')
         
     elseif strcomp(str,'N')
         

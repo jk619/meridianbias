@@ -1,10 +1,10 @@
 clear
 clc
+addpath(genpath('vistasoft'))
 
 
 % You can run download_HCP.sh to download the data, otherwise the script
 % will ask you if you want matlab to do it for you.
-addpath(genpath('vistasoft'))
 
 if exist('prfresultsmgz','dir')
     

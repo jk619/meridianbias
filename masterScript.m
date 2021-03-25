@@ -17,6 +17,8 @@ else
         
     elseif strcomp(str,'N')
         
+        error('You need the data!')
+        
     else
         
         error('wrong input')

@@ -130,7 +130,7 @@ figure(4);clf
 mymeanperc = nanmean(assym_subj);
 mystdperc = nanstd(assym_subj,[],1)/sqrt(length(assym_subj));
 
-ppp=plot(moving,mymeanperc,'-o','Linewidth',2,'Color', [0.9490 0.1020 0],'MarkerSize',6); hold on
+plot(moving,mymeanperc,'-o','Linewidth',2,'Color', [0.9490 0.1020 0],'MarkerSize',6); hold on
 errorbar(moving,mymeanperc,mystdperc,'Color',[0.9490 0.1020 0],'Linewidth',6)
 
 
@@ -141,9 +141,7 @@ ylabel('Asymmetry ratio (%)')
 ylim([-20 100]);
 xlim([0 50]);
 
-
 plot(xlim,[0 0],'--','Color',[0.5 0.5 0.5]);
-
 myticks = moving(1:2:end);
 xticklabels(myticks)
 set(gcf,'Position',[ 745 735 903 562])

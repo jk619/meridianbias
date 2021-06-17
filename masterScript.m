@@ -26,7 +26,7 @@ else
         
     else
         
-        error('wrong input')
+        error('Wrong input!')
     end
     
     

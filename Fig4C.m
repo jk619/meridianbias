@@ -105,9 +105,6 @@ end
 
 
 %%
-
-return
-
 mymeanbeta_nohemi = nanmean(myamp,4);
 assym_subj = NaN(length(subjects),length(moving));
 

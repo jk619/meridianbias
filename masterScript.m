@@ -33,7 +33,7 @@ end
 
 % We need vistasoft to be able to load mgz surface files.
 addpath(genpath('vistasoft'))
-% reproduce asymmetry for HCP dataset in Figure 3.
+% reproduce asymmetry for HCP dataset in Figure 3E.
 Fig3E
-% reproduce incremental asymmetry for HCP in Figure 4.
+% reproduce incremental asymmetry for HCP in Figure 4C.
 Fig4C

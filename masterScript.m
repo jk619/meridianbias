@@ -13,7 +13,11 @@ else
     
     if strcmp(str,'Y') || strcmp(str,'y')
         
+        % downloads pRF solutions for HCP for each subject.
+        % downloads Benson's atlas to locate V1 ROI.
+        % clones repisotory of vistasoft needed to load mgz files.
         system('sh download_HCP.sh')
+        
         
     elseif strcmp(str,'N') ||  strcmp(str,'n')
         
@@ -27,9 +31,9 @@ else
     
 end
 
-% We need vistasoft to be able to load mgz surface files
+% We need vistasoft to be able to load mgz surface files.
 addpath(genpath('vistasoft'))
-% reproduce asymmetry for HCP dataset in Figure 3
-Fig3C
-% reproduce icremental asymmetry for HCP in Figure 4
-Fig4B
+% reproduce asymmetry for HCP dataset in Figure 3.
+Fig3E
+% reproduce incremental asymmetry for HCP in Figure 4.
+Fig4C

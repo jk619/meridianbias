@@ -1,7 +1,7 @@
 % JK 03/2021
 clear
 clc
-
+fprintf('Reproducing Figure 3E.....\n')
 %find HCP subjects
 subjects = dir('./prfresultsmgz/');
 
@@ -149,7 +149,7 @@ end
 
 %%
 
-figure(1);clf
+figure(3);clf
 
 cmap(1,:) = round([130 120 120]/255,2);
 cmap(2,:) = round([189 93 181]/255,2);
@@ -180,7 +180,7 @@ for hv = 1:size(hv_means,2)
 end
 
 asymmetry = (hv_means(1) - hv_means(2)) ./ ((hv_means(2)+hv_means(1))/2) * 100;
-text(2.2,mean(hv_means),['\it' sprintf('%.2f%%',asymmetry)],'FontSize',25,'Color',cmap(3,:))
+text(2.2,mean(hv_means),['\it' sprintf('%.1f%%',asymmetry)],'FontSize',25,'Color',cmap(3,:))
 
 ylabel('%BOLD')
 
@@ -196,3 +196,4 @@ title('HCP (n=181)')
 yticks([0:0.1:0.4])
 set(gcf,'Position',[  1584         678         508         619])
 xlim([-0.2 4])
+drawnow

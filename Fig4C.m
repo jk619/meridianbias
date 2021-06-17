@@ -1,6 +1,7 @@
 % JK 03/2021
 clear
 clc
+fprintf('Reproducing Figure 4C.....\n')
 
 subjects = dir('./prfresultsmgz/');
 subjects=subjects(~ismember({subjects.name},{'999997','999998','999999'}));
@@ -127,7 +128,7 @@ for v = 1 : length(moving)
 end
 
 %%
-figure(2);clf
+figure(4);clf
 
 mymeanperc = nanmean(assym_subj);
 mystdperc = nanstd(assym_subj,[],1)/sqrt(length(assym_subj));
@@ -146,15 +147,15 @@ xlim([0 50]);
 
 plot(xlim,[0 0],'--','Color',[0.5 0.5 0.5]);
 
-myticks = xticks;
-mytxttick = cell(1,length(myticks));
-for m = 1 : length(myticks)
-    
-    mytxttick{m} = sprintf('%i%s',myticks(m),char(176));
-    
-end
+myticks = moving;
+% mytxttick = cell(1,length(myticks));
+% for m = 1 : length(myticks)
+%     
+%     mytxttick{m} = sprintf('%i%s',myticks(m),char(176));
+%     
+% end
 
-xticklabels(mytxttick)
-set(gcf,'Position',[ 745         804        1511         493])
+xticklabels(myticks)
+set(gcf,'Position',[ 745 735 903 562])
 
 

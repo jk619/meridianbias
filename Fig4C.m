@@ -134,7 +134,6 @@ errorbar(moving,mymeanperc,mystdperc,'Color',[0.9490 0.1020 0],'Linewidth',6)
 
 
 set(gca,'Fontsize',30)
-title('Incremental')
 xlabel(sprintf('Meridian (deg)'));
 ylabel('Asymmetry ratio (%)')
 ylim([-20 100]);

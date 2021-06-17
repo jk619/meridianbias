@@ -11,10 +11,9 @@ subjects_char=char(subjects);
 ok=(isstrprop(subjects_char(:,1),'digit'));
 subjects = subjects(ok);
 
-hemi = {'lh';'rh'}
-moving = 0:5:50
-width = 10*2
-datasets = {'HCP'}
+hemi = {'lh';'rh'};
+moving = 0:5:50;
+width = 10*2;
 
 myamp = NaN(2,length(subjects),length(moving),length(hemi));
 %%

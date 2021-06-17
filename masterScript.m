@@ -9,13 +9,13 @@ if exist('prfresultsmgz','dir')
     
 else
     
-    str = input('Do you want to download HCP pRF solutions? type Y/N and press return.','s');
+    str = input('Do you want to download HCP pRF solutions? type Y/N and press return. ','s');
     
-    if strcmp(str,'Y')
+    if strcmp(str,'Y') || strcmp(str,'y')
         
         system('sh download_HCP.sh')
         
-    elseif strcmp(str,'N')
+    elseif strcmp(str,'N') ||  strcmp(str,'n')
         
         error('You need the data!')
         

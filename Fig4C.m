@@ -143,7 +143,6 @@ xlim([0 50]);
 
 plot(xlim,[0 0],'--','Color',[0.5 0.5 0.5]);
 myticks = moving(1:2:end);
+set(gcf,'Position',[551 456 1081 487])
 xticklabels(myticks)
-set(gcf,'Position',[ 745 735 903 562])
-
 

@@ -11,11 +11,11 @@ else
     
     str = input('Do you want to download HCP pRF solutions? Y/N ','s');
     
-    if strcomp(str,'Y')
+    if strcmp(str,'Y')
         
         system('sh download_HCP.sh')
         
-    elseif strcomp(str,'N')
+    elseif strcmp(str,'N')
         
         error('You need the data!')
         

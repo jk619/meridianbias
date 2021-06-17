@@ -1,6 +1,5 @@
 clear
 clc
-addpath(genpath('vistasoft'))
 
 
 % You can run download_HCP.sh to download the data, otherwise the script
@@ -28,6 +27,8 @@ else
     
 end
 
+% We need vistasoft to be able to load mgz surface files
+addpath(genpath('vistasoft'))
 % reproduce asymmetry for HCP dataset in Figure 3
 Fig3C
 % reproduce icremental asymmetry for HCP in Figure 4

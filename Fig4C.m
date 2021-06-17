@@ -147,14 +147,7 @@ xlim([0 50]);
 
 plot(xlim,[0 0],'--','Color',[0.5 0.5 0.5]);
 
-myticks = moving;
-% mytxttick = cell(1,length(myticks));
-% for m = 1 : length(myticks)
-%     
-%     mytxttick{m} = sprintf('%i%s',myticks(m),char(176));
-%     
-% end
-
+myticks = moving(1:2:end);
 xticklabels(myticks)
 set(gcf,'Position',[ 745 735 903 562])
 

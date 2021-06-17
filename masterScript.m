@@ -9,7 +9,7 @@ if exist('prfresultsmgz','dir')
     
 else
     
-    str = input('Do you want to download HCP pRF solutions? Y/N ','s');
+    str = input('Do you want to download HCP pRF solutions? type Y/N and press return.','s');
     
     if strcmp(str,'Y')
         

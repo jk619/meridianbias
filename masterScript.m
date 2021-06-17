@@ -1,5 +1,6 @@
 clear
 clc
+close all
 
 
 % You can run download_HCP.sh to download the data, otherwise the script
@@ -13,7 +14,7 @@ else
     
     if strcmp(str,'Y') || strcmp(str,'y')
         
-        % downloads pRF solutions for HCP for each subject.
+        % downloads pRF maps for for each subject in HCP dataset (n=181).
         % downloads Benson's atlas to locate V1 ROI.
         % clones repisotory of vistasoft needed to load mgz files.
         system('sh download_HCP.sh')

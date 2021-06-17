@@ -16,9 +16,9 @@ moving = 0:5:50
 width = 10*2
 datasets = {'HCP'}
 
-% myamp = NaN(2,length(subjects),length(moving),length(hemi));
+myamp = NaN(2,length(subjects),length(moving),length(hemi));
 %%
-for s = 1%:length(subjects)
+for s = 1:length(subjects)
     
     
     disp(subjects{s})

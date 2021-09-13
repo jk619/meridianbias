@@ -1,9 +1,22 @@
 % JK 03/2021
 clear
 clc
+<<<<<<< HEAD:Fig3C.m
 
 subjects = dir('./data/prfresultsmgz/');
+=======
+fprintf('Reproducing Figure 3E.....\n')
+%find HCP subjects
+subjects = dir('./prfresultsmgz/');
+
+% remove average subjects
+>>>>>>> 6a29177356c88f8831219a2222b49dec5e3ce743:Fig3E.m
 subjects=subjects(~ismember({subjects.name},{'999997','999998','999999'}));
+
+% For details see:
+% Benson et al., The Human Connectome Project 7 Tesla retinotopy dataset: 
+% Description and %population receptive field analysis.
+
 subjects = {subjects.name};
 
 subjects_char=char(subjects);
@@ -12,10 +25,15 @@ subjects = subjects(ok);
 
 hemi = {'lh';'rh'};
 
+% define the width of the wedge mask.
 width = 20;
 
 myamp = zeros(2,length(subjects),2);
 %%
+
+% Loop through the subjects and estimate median BOLD for horizontal and
+% vertical ROIs for each subject.
+
 for s = 1:length(subjects)
     
     
@@ -26,6 +44,7 @@ for s = 1:length(subjects)
     
     for h = 1:length(hemi)
         
+<<<<<<< HEAD:Fig3C.m
         
         ecc = MRIread(sprintf('./data/prfresultsmgz/%s/%s.fit1_ecc.mgz',subj,hemi{h}));
         hvmap = MRIread(sprintf('./data/prfresultsmgz/%s/%s.fit1_ang.mgz',subj,hemi{h}));
@@ -33,15 +52,29 @@ for s = 1:length(subjects)
         
         atlas = MRIread(sprintf('./data/benson_atlas/%s.varea.mgz',hemi{h}));
         glmres = MRIread(sprintf('./data/prfresultsmgz/%s/%s.fit1_gain.mgz',subj,hemi{h}));
+=======
+        % load maps  (eccentricity, polar angle and mean volume and gain)
+        ecc = MRIread(sprintf('./prfresultsmgz/%s/%s.fit1_ecc.mgz',subj,hemi{h}));
+        hvmap = MRIread(sprintf('./prfresultsmgz/%s/%s.fit1_ang.mgz',subj,hemi{h}));
+        meanvol = MRIread(sprintf('./prfresultsmgz/%s/%s.fit1_meanvol.mgz',subj,hemi{h}));
+        glmres = MRIread(sprintf('./prfresultsmgz/%s/%s.fit1_gain.mgz',subj,hemi{h}));
+
+        % load Benson's atlas with ROIs
+        atlas = MRIread(sprintf('./benson_atlas/%s.varea.mgz',hemi{h}));
+        
+        % calculate %BOLD
+>>>>>>> 6a29177356c88f8831219a2222b49dec5e3ce743:Fig3E.m
         glmres = (glmres.vol'./meanvol.vol')*100;
         
         
         %% Conversion of analyzepRF polar angle coordinates to Benson atlas
         
-        % adjust angle to Benson atlas so it is consistent with TDM and NSD
-        % 0 deg represents upper vertical meridian (lower bank of V1), 90 
-        % degrees represents horiozntal meridian and 180 deg lower vertical
-        % meridian (upper bank of V1).
+        % Instead of using aPRF coordinates for polar angle that span 
+        % between 0-360 we are going to adjust it so a map from each
+        % hemispheres spans between 0-180 0 deg will represent upper 
+        % vertical meridian (lower bank of V1), 90 degrees will represent
+        % horiozntal meridian and 180 deg lower vertical meridian (upper 
+        % bank of V1).
         
         if h == 1
             
@@ -50,13 +83,15 @@ for s = 1:length(subjects)
         elseif h == 2
             
             hvmap.vol  = (mod(90 - hvmap.vol + 180, 360) - 180);
-            hvmap.vol = hvmap.vol .* -1;
+            hvmap.vol = hvmap.vol .* -1; %flip the sign of right hemisphere
+            % so the maps between left and right hemisphere are identical
+            % (easier for looping through hemispheres)
             
         end
         
         
         %%
-        % Pick V1  only
+        % Pick V1  only from Benson's atlas
         myrois = (squeeze(atlas.vol == 1))';
         
         for hv = 1:2
@@ -82,10 +117,25 @@ for s = 1:length(subjects)
                 
             elseif hv == 2
                 
+                % get cortical space that represent a wedge of width = 20
+                % deg for upper vertical meridian. Upper vertical meridian
+                % starts at the lower bank of V1 where cardinal locations
+                % are represented by 0 deg. To get a wedge of 20 deg we 
+                % simply thresholds the map from 0 to 20 deg.
+                % 
                 horzvert1 = hvmap.vol > 0;
                 horzvert2 = hvmap.vol < 0+width;
+                
+                % get cortical space that represent a wedge of width = 20
+                % deg for lower vertical meridian. Lower vertical meridian
+                % starts at the upper bank of V1 where cardinal locations
+                % are represented by 180 deg. To get a wedge of 20 deg we 
+                % simply thresholds the map from 160 to 180 deg.
+              
                 horzvert3 = hvmap.vol > 180 - width;
                 horzvert4 =  hvmap.vol < 180;
+                
+                % combine upper and lower ROIs into vertical meridian.
                 horzvert = ((horzvert1 & horzvert2) | (horzvert3 & horzvert4)) & myrois;
                 
                 
@@ -94,8 +144,11 @@ for s = 1:length(subjects)
                 
             end
             
-            
+            % threshold data with maximum stimulated eccentricity in HCP
             horzvert = horzvert & ecc.vol < 8;
+            
+            % for each horizontal or vertical ROI, subject and hemisphere
+            % calculate median BOLD.
             myamp(hv,s,h) = nanmedian(glmres(horzvert));
             
         end
@@ -111,27 +164,36 @@ end
 
 %%
 
-figure(1);clf
+figure(3);clf
 
 cmap(1,:) = round([130 120 120]/255,2);
 cmap(2,:) = round([189 93 181]/255,2);
 cmap(3,:) = round([176 155 178]/255,2);
 
 
+% average across hemispheres
 mymeanbold_nohemi = nanmean(myamp,3);
 
+% assign values for horizontal and vertical ROIs
 horz = mymeanbold_nohemi(1,:);
 vert = mymeanbold_nohemi(2,:);
 
 
+% calculated standard error of each metric
 mystds_v = nanstd(vert)/sqrt(length(subjects)-1);
 mystds_h = nanstd(horz)/sqrt(length(subjects)-1);
 
+<<<<<<< HEAD:Fig3C.m
 hv_means = [nanmean(horz) nanmean(vert)];
 hv_stds =  [nanstd(horz)/sqrt(length(subjects)-1) nanstd(vert)/sqrt(length(subjects)-1)];
+=======
+% assign means and stds
+hv_means = [nanmean(horz) nanmean(vert)]
+hv_stds =  [nanstd(horz)/sqrt(length(subjects)-1) nanstd(vert)/sqrt(length(subjects)-1)]
+>>>>>>> 6a29177356c88f8831219a2222b49dec5e3ce743:Fig3E.m
 
 
-
+%% PLOT results as a bar plot
 for hv = 1:size(hv_means,2)
     bar(hv,hv_means(hv),'FaceColor',cmap(hv,:),'EdgeColor','None','LineWidth',5,'BarWidth',0.9); hold on
     errorbar(hv,hv_means(hv),hv_stds(hv),'Color',cmap(hv,:)-0.3,'LineWidth',8,'Capsize',0);
@@ -156,4 +218,8 @@ yticks([0:0.1:0.5])
 
 set(gcf,'Position',[  1584         678         508         619])
 xlim([-0.2 4])
+<<<<<<< HEAD:Fig3C.m
 box off
+=======
+drawnow
+>>>>>>> 6a29177356c88f8831219a2222b49dec5e3ce743:Fig3E.m

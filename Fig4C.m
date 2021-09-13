@@ -1,6 +1,7 @@
 % JK 03/2021
 clear
 clc
+fprintf('Reproducing Figure 4C.....\n')
 
 subjects = dir('./data/prfresultsmgz/');
 subjects=subjects(~ismember({subjects.name},{'999997','999998','999999'}));
@@ -10,10 +11,16 @@ subjects_char=char(subjects);
 ok=(isstrprop(subjects_char(:,1),'digit'));
 subjects = subjects(ok);
 
+<<<<<<< HEAD:Fig4B.m
 hemi = {'lh';'rh'}
 moving = 0:5:50;
 width = 10*2;
 datasets = {'HCP'};
+=======
+hemi = {'lh';'rh'};
+moving = 0:5:50;
+width = 10*2;
+>>>>>>> 6a29177356c88f8831219a2222b49dec5e3ce743:Fig4C.m
 
 myamp = NaN(2,length(subjects),length(moving),length(hemi));
 %%
@@ -104,9 +111,6 @@ end
 
 
 %%
-
-
-
 mymeanbeta_nohemi = nanmean(myamp,4);
 assym_subj = NaN(length(subjects),length(moving));
 
@@ -127,34 +131,23 @@ for v = 1 : length(moving)
 end
 
 %%
-figure(2);clf
+figure(4);clf
 
 mymeanperc = nanmean(assym_subj);
 mystdperc = nanstd(assym_subj,[],1)/sqrt(length(assym_subj));
 
-ppp=plot(moving,mymeanperc,'-o','Linewidth',2,'Color', [0.9490 0.1020 0],'MarkerSize',6); hold on
+plot(moving,mymeanperc,'-o','Linewidth',2,'Color', [0.9490 0.1020 0],'MarkerSize',6); hold on
 errorbar(moving,mymeanperc,mystdperc,'Color',[0.9490 0.1020 0],'Linewidth',6)
 
 
 set(gca,'Fontsize',30)
-title('Incremental')
 xlabel(sprintf('Meridian (deg)'));
 ylabel('Asymmetry ratio (%)')
 ylim([-20 100]);
 xlim([0 50]);
 
-
 plot(xlim,[0 0],'--','Color',[0.5 0.5 0.5]);
-
-myticks = xticks;
-mytxttick = cell(1,length(myticks));
-for m = 1 : length(myticks)
-    
-    mytxttick{m} = sprintf('%i%s',myticks(m),char(176));
-    
-end
-
-xticklabels(mytxttick)
-set(gcf,'Position',[ 745         804        1511         493])
-
+myticks = moving(1:2:end);
+set(gcf,'Position',[551 456 1081 487])
+xticklabels(myticks)
 

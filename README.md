@@ -1,7 +1,6 @@
 # The influence of non-neural factors on BOLD signal magnitude
 Code to reproduce the figures 3C and 4C 
 
-
 The code will download the HCP 7T retinotopy data from osf together with Benson's V1 definition.
 
 Dependencies:

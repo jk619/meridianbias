@@ -1,16 +1,11 @@
 % JK 03/2021
 clear
 clc
-<<<<<<< HEAD:Fig3C.m
-
-subjects = dir('./data/prfresultsmgz/');
-=======
 fprintf('Reproducing Figure 3E.....\n')
 %find HCP subjects
 subjects = dir('./prfresultsmgz/');
 
 % remove average subjects
->>>>>>> 6a29177356c88f8831219a2222b49dec5e3ce743:Fig3E.m
 subjects=subjects(~ismember({subjects.name},{'999997','999998','999999'}));
 
 % For details see:
@@ -44,15 +39,6 @@ for s = 1:length(subjects)
     
     for h = 1:length(hemi)
         
-<<<<<<< HEAD:Fig3C.m
-        
-        ecc = MRIread(sprintf('./data/prfresultsmgz/%s/%s.fit1_ecc.mgz',subj,hemi{h}));
-        hvmap = MRIread(sprintf('./data/prfresultsmgz/%s/%s.fit1_ang.mgz',subj,hemi{h}));
-        meanvol = MRIread(sprintf('./data/prfresultsmgz/%s/%s.fit1_meanvol.mgz',subj,hemi{h}));
-        
-        atlas = MRIread(sprintf('./data/benson_atlas/%s.varea.mgz',hemi{h}));
-        glmres = MRIread(sprintf('./data/prfresultsmgz/%s/%s.fit1_gain.mgz',subj,hemi{h}));
-=======
         % load maps  (eccentricity, polar angle and mean volume and gain)
         ecc = MRIread(sprintf('./prfresultsmgz/%s/%s.fit1_ecc.mgz',subj,hemi{h}));
         hvmap = MRIread(sprintf('./prfresultsmgz/%s/%s.fit1_ang.mgz',subj,hemi{h}));
@@ -63,7 +49,6 @@ for s = 1:length(subjects)
         atlas = MRIread(sprintf('./benson_atlas/%s.varea.mgz',hemi{h}));
         
         % calculate %BOLD
->>>>>>> 6a29177356c88f8831219a2222b49dec5e3ce743:Fig3E.m
         glmres = (glmres.vol'./meanvol.vol')*100;
         
         
@@ -183,20 +168,15 @@ vert = mymeanbold_nohemi(2,:);
 mystds_v = nanstd(vert)/sqrt(length(subjects)-1);
 mystds_h = nanstd(horz)/sqrt(length(subjects)-1);
 
-<<<<<<< HEAD:Fig3C.m
-hv_means = [nanmean(horz) nanmean(vert)];
-hv_stds =  [nanstd(horz)/sqrt(length(subjects)-1) nanstd(vert)/sqrt(length(subjects)-1)];
-=======
 % assign means and stds
 hv_means = [nanmean(horz) nanmean(vert)]
 hv_stds =  [nanstd(horz)/sqrt(length(subjects)-1) nanstd(vert)/sqrt(length(subjects)-1)]
->>>>>>> 6a29177356c88f8831219a2222b49dec5e3ce743:Fig3E.m
 
 
 %% PLOT results as a bar plot
 for hv = 1:size(hv_means,2)
     bar(hv,hv_means(hv),'FaceColor',cmap(hv,:),'EdgeColor','None','LineWidth',5,'BarWidth',0.9); hold on
-    errorbar(hv,hv_means(hv),hv_stds(hv),'Color',cmap(hv,:)-0.3,'LineWidth',8,'Capsize',0);
+    errorbar(hv,hv_means(hv),hv_stds(hv),'Color',[0 0 0],'LineWidth',5);
 end
 
 asymmetry = (hv_means(1) - hv_means(2)) ./ ((hv_means(2)+hv_means(1))/2) * 100;
@@ -213,13 +193,7 @@ set(gca,'Fontsize',30)
 xticks([1 2])
 xticklabels({'HM';'VM'})
 title('HCP (n=181)')
-ylim([0 0.5])
-yticks([0:0.1:0.5])
-
+yticks([0:0.1:0.4])
 set(gcf,'Position',[  1584         678         508         619])
 xlim([-0.2 4])
-<<<<<<< HEAD:Fig3C.m
-box off
-=======
 drawnow
->>>>>>> 6a29177356c88f8831219a2222b49dec5e3ce743:Fig3E.m

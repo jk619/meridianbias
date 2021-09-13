@@ -10,7 +10,7 @@ To use the code, download or clone this github repository, then navigate to the 
 Example usage below:
 
 ``` Matlab
- % Navigate to the correct folder and add the paths
+ % Navigate to the correct
  
  masterScript.m
  

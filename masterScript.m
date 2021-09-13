@@ -1,12 +1,13 @@
 clear
 clc
-addpath(genpath('vistasoft'))
+
+
 
 
 % You can run download_HCP.sh to download the data, otherwise the script
 % will ask you if you want matlab to do it for you.
 
-if exist('prfresultsmgz','dir')
+if exist('./data/prfresultsmgz','dir')
     
 else
     
@@ -14,7 +15,7 @@ else
     
     if strcomp(str,'Y')
         
-        system('sh download_HCP.sh')
+        system('sh ./subroutines/download_HCP.sh')
         
     elseif strcomp(str,'N')
         
@@ -28,7 +29,10 @@ else
     
 end
 
+
+
+addpath(genpath('vistasoft'))
 % reproduce asymmetry for HCP dataset in Figure 3
 Fig3C
-% reproduce icremental asymmetry for HCP in Figure 4
+% reproduce incremental asymmetry analysis for HCP in Figure 4
 Fig4B

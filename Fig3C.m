@@ -2,7 +2,7 @@
 clear
 clc
 
-subjects = dir('./prfresultsmgz/');
+subjects = dir('./data/prfresultsmgz/');
 subjects=subjects(~ismember({subjects.name},{'999997','999998','999999'}));
 subjects = {subjects.name};
 
@@ -27,12 +27,12 @@ for s = 1:length(subjects)
     for h = 1:length(hemi)
         
         
-        ecc = MRIread(sprintf('./prfresultsmgz/%s/%s.fit1_ecc.mgz',subj,hemi{h}));
-        hvmap = MRIread(sprintf('./prfresultsmgz/%s/%s.fit1_ang.mgz',subj,hemi{h}));
-        meanvol = MRIread(sprintf('./prfresultsmgz/%s/%s.fit1_meanvol.mgz',subj,hemi{h}));
+        ecc = MRIread(sprintf('./data/prfresultsmgz/%s/%s.fit1_ecc.mgz',subj,hemi{h}));
+        hvmap = MRIread(sprintf('./data/prfresultsmgz/%s/%s.fit1_ang.mgz',subj,hemi{h}));
+        meanvol = MRIread(sprintf('./data/prfresultsmgz/%s/%s.fit1_meanvol.mgz',subj,hemi{h}));
         
-        atlas = MRIread(sprintf('./benson_atlas/%s.varea.mgz',hemi{h}));
-        glmres = MRIread(sprintf('./prfresultsmgz/%s/%s.fit1_gain.mgz',subj,hemi{h}));
+        atlas = MRIread(sprintf('./data/benson_atlas/%s.varea.mgz',hemi{h}));
+        glmres = MRIread(sprintf('./data/prfresultsmgz/%s/%s.fit1_gain.mgz',subj,hemi{h}));
         glmres = (glmres.vol'./meanvol.vol')*100;
         
         
@@ -127,18 +127,18 @@ vert = mymeanbold_nohemi(2,:);
 mystds_v = nanstd(vert)/sqrt(length(subjects)-1);
 mystds_h = nanstd(horz)/sqrt(length(subjects)-1);
 
-hv_means = [nanmean(horz) nanmean(vert)]
-hv_stds =  [nanstd(horz)/sqrt(length(subjects)-1) nanstd(vert)/sqrt(length(subjects)-1)]
+hv_means = [nanmean(horz) nanmean(vert)];
+hv_stds =  [nanstd(horz)/sqrt(length(subjects)-1) nanstd(vert)/sqrt(length(subjects)-1)];
 
 
 
 for hv = 1:size(hv_means,2)
     bar(hv,hv_means(hv),'FaceColor',cmap(hv,:),'EdgeColor','None','LineWidth',5,'BarWidth',0.9); hold on
-    errorbar(hv,hv_means(hv),hv_stds(hv),'Color',[0 0 0],'LineWidth',5);
+    errorbar(hv,hv_means(hv),hv_stds(hv),'Color',cmap(hv,:)-0.3,'LineWidth',8,'Capsize',0);
 end
 
 asymmetry = (hv_means(1) - hv_means(2)) ./ ((hv_means(2)+hv_means(1))/2) * 100;
-text(2.2,mean(hv_means),['\it' sprintf('%.2f%%',asymmetry)],'FontSize',25,'Color',cmap(3,:))
+text(2.2,mean(hv_means),['\it' sprintf('%.1f%%',asymmetry)],'FontSize',25,'Color',cmap(3,:))
 
 ylabel('%BOLD')
 
@@ -151,6 +151,9 @@ set(gca,'Fontsize',30)
 xticks([1 2])
 xticklabels({'HM';'VM'})
 title('HCP (n=181)')
-yticks([0:0.1:0.4])
+ylim([0 0.5])
+yticks([0:0.1:0.5])
+
 set(gcf,'Position',[  1584         678         508         619])
 xlim([-0.2 4])
+box off

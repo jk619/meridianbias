@@ -31,8 +31,8 @@ myamp = zeros(2,length(subjects),2);
 
 for s = 1:length(subjects)
     
-    
-    disp(subjects{s})
+    clc
+    fprintf('Analysing subject %i/%i',s,length(subjects))
     subj = subjects{s};
     
     
@@ -56,7 +56,7 @@ for s = 1:length(subjects)
         
         % Instead of using aPRF coordinates for polar angle that span 
         % between 0-360 we are going to adjust it so a map from each
-        % hemispheres spans between 0-180 0 deg will represent upper 
+        % hemispheres spans between 0-180. 0 deg will represent upper 
         % vertical meridian (lower bank of V1), 90 degrees will represent
         % horiozntal meridian and 180 deg lower vertical meridian (upper 
         % bank of V1).
@@ -104,8 +104,8 @@ for s = 1:length(subjects)
                 
                 % get cortical space that represent a wedge of width = 20
                 % deg for upper vertical meridian. Upper vertical meridian
-                % starts at the lower bank of V1 where cardinal locations
-                % are represented by 0 deg. To get a wedge of 20 deg we 
+                % starts at the lower bank of V1 where cardinal location
+                % is represented by 0 deg. To get a wedge of 20 deg we 
                 % simply thresholds the map from 0 to 20 deg.
                 % 
                 horzvert1 = hvmap.vol > 0;

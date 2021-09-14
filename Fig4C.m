@@ -20,7 +20,8 @@ myamp = NaN(2,length(subjects),length(moving),length(hemi));
 for s = 1:length(subjects)
     
     
-    disp(subjects{s})
+    clc
+    fprintf('Analysing subject %i/%i',s,length(subjects))
     subj = subjects{s};
     
     

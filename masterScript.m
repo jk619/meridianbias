@@ -7,8 +7,8 @@ cd(rootPath);
 
 % check dependencies
 
-if ~exist('MRIread.m','file')
-    error('You need freesurfer''s matlab toolbox, See README.md')
+if ~exist('MRIrsead.m','file')
+    error('MRIread.m was not found. You need freesurfer''s matlab toolbox. See README.md')
 end
 
 if exist('prfresultsmgz','dir') && exist('benson_atlas','dir')

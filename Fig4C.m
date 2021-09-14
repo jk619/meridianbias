@@ -21,7 +21,7 @@ for s = 1:length(subjects)
     
     
     clc
-    fprintf('Analysing subject %i/%i',s,length(subjects))
+    fprintf('Analysing subject %i/%i for Fig4C',s,length(subjects))
     subj = subjects{s};
     
     

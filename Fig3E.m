@@ -32,7 +32,7 @@ myamp = zeros(2,length(subjects),2);
 for s = 1:length(subjects)
     
     clc
-    fprintf('Analysing subject %i/%i',s,length(subjects))
+    fprintf('Analysing subject %i/%i for Fig3E',s,length(subjects))
     subj = subjects{s};
     
     

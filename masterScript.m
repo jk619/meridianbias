@@ -2,7 +2,7 @@ clear
 clc
 close all
 
-rootPath=ebsrootPath();
+rootPath=rootPath();
 cd(rootPath);
 
 % check dependencies

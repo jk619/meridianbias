@@ -7,7 +7,7 @@ cd(rootPath);
 
 % check dependencies
 
-if ~exist('MRIrsead.m','file')
+if ~exist('MRIread.m','file')
     error('MRIread.m was not found. You need freesurfer''s matlab toolbox. See README.md')
 end
 
@@ -21,11 +21,12 @@ else
         
         % download pRF maps for each subject in HCP dataset (n=181).
         
-        
+        disp('-------------------------------------------------------')
         disp('Downloading HCP 7T retinotopy data - might take a while')
         disp('-------------------------------------------------------')
 
         websave('./prfresultsmgz.zip', 'https://osf.io/tqprz/download');
+        
         disp('Unpacking HCP 7T retinotopy data')
         disp('-------------------------------------------------------')
         unzip('prfresultsmgz.zip')
@@ -33,6 +34,7 @@ else
         % download Benson's atlas to locate V1 ROI.
 
         mkdir('benson_atlas')
+        
         disp('Downloading Benson''s V1 definition')
         disp('-------------------------------------------------------')
         websave('./benson_atlas/lh.varea.mgz','https://github.com/noahbenson/neuropythy/raw/master/neuropythy/lib/data/fsaverage/surf/lh.benson14_varea.v4_0.mgz');

@@ -19,7 +19,7 @@ else
     
     if strcmp(str,'Y') || strcmp(str,'y')
         
-        % download pRF maps for for each subject in HCP dataset (n=181).
+        % download pRF maps for each subject in HCP dataset (n=181).
         
         
         disp('Downloading HCP 7T retinotopy data - might take a while')

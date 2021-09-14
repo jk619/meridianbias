@@ -135,7 +135,7 @@ errorbar(moving,mymeanperc,mystdperc,'Color',[0.9490 0.1020 0],'Linewidth',6)
 
 
 set(gca,'Fontsize',30)
-xlabel(sprintf('Meridian (deg)'));
+xlabel(sprintf('Away from meridian (deg)'));
 ylabel('Asymmetry ratio (%)')
 ylim([-20 100]);
 xlim([0 50]);

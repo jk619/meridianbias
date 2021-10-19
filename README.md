@@ -2,9 +2,9 @@
 Code from this repository will reproduce the main figures in the paper and save them in the "figures" directory. All scripts are written in MATLAB.
 The code will download the HCP 7T retinotopy data, Benson's V1 definitions, example NSD maps and a preprocessed TDM dataset. 
 
-1. [HCP 7T retinotopy](https://doi.org/10.1167/18.13.23)
+1. [HCP 7T retinotopy](https://osf.io/esdu5/)
 2. [NSD](http://naturalscenesdataset.org)
-3. [TDM](https://doi.org/10.1038/s41592-020-0941-6)
+3. [TDM](https://osf.io/j2wsc/)
 
 Dependencies:
 

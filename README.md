@@ -12,13 +12,14 @@ Two additional toolboxes that can be downloaded from github
 * cvncode https://github.com/cvnlab/cvncode
 * knkutils https://github.com/cvnlab/knkutils
 
-If you are using ToolboxToolbox to control paths and Matlab environemnt you can get a setup file that will download all the necesseary dependancies.
+If you are using ToolboxToolbox (https://github.com/ToolboxHub/ToolboxToolbox)to control paths and Matlab environemnt you can use this setup file that will download all the necesseary dependancies.
 https://github.com/WinawerLab/ToolboxRegistry/tree/master/configurations/meridianbias.json
 
 
 ``` Matlab
 tbUse meridianbias
 ```
+
 If you don't want to manually download the necessary dependencies, the do_0_check_dependencies.m can do it for you.
 
 To use the code, download or clone this github repository and navigate to the repository in the Matlab command window.

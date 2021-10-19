@@ -1,4 +1,5 @@
 data0 = data_bak;
+combos = {[2 4 8]};
 positiveBOLD = data0(:,10)<5.5 & ismember(data0(:,7),[1 2 3]) & all(isfinite(data0(:,combos{1})),2);
 data0 = data0(positiveBOLD,:);
 
@@ -133,7 +134,7 @@ set(gca,'Fontsize',15)
 t.FontSize = 15;
 
 % 
-title('Y = \beta_0+\beta_1*XC+ \beta_2*XT+ \beta_3*XBc_E_P_I','Fontweight','light')
+title('Y = \beta_0+\beta_1XC+ \beta_2XT+ \beta_3XBc_E_P_I','Fontweight','light')
 %%
 axes('Position',[.75 .7 .15 .15])
 box on

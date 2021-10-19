@@ -211,7 +211,7 @@ axis square
 xlabel('Angle with respect to B0 (deg)');
 %%
 subplot(4,3,1)
-map = MRIread(['./data_nsd/lh.curvature.mgz'])
+map = MRIread(['./data_nsd/lh.curvature.mgz']);
 datatoplot = map.vol;
 bins = -1:0.015:1;
 cmap0 = cmaplookup(bins,-1,1,[],flipud(gray(256)));

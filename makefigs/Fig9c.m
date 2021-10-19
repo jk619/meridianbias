@@ -8,7 +8,7 @@ yfixed = data0(:,14);
 for s = 1 : length(subjects)
     
     
-    selected =  data0(:,7) == r & data0(:,12) == s  & data0(:,10) < 5.5 &  data0(:,7) == 1;
+    selected =  data0(:,12) == s  & data0(:,10) < 5.5 &  data0(:,7) == 1;
     before(s) = nanstd(y(selected))/nanmean(y(selected));
     after(s) = nanstd(yfixed(selected))/nanmean(yfixed(selected));
     
@@ -33,7 +33,7 @@ ccmap(2,:) = cmap(end-10,:);
 
 for b=1:2
     
-    hh(b) =bar (b,mymeans(b),'FaceColor','None','EdgeColor',ccmap(b,:),'LineWidth',2); hold on
+    hhh(b) =bar (b,mymeans(b),'FaceColor','None','EdgeColor',ccmap(b,:),'LineWidth',2); hold on
     errorbar(b,mymeans(b),myerrors(b),'Color',ccmap(b,:),'LineWidth',2)
     ylabel('Coefficent of Variation (%)')
     set(gca,'Fontsize',15)
@@ -45,7 +45,7 @@ for b=1:2
 end
 
 
-legend(hh,{'%BOLD';'Corrected %BOLD'})
+legend(hhh,{'%BOLD';'Corrected %BOLD'})
 legend box off
 
 %%

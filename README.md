@@ -23,6 +23,8 @@ If you are no using ToolboxToolbox and don't want to manually download the neces
 To use the code, download or clone this github repository and navigate to the repository in the Matlab command window.
 Example usage below:
 
+This is the content of masterscript.m
+
 ``` Matlab
  % Navigate to the correct directory and add all to path
 

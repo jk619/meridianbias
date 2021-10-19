@@ -1,6 +1,10 @@
 # The influence of non-neural factors on BOLD signal magnitude
-Code will reproduce the main figures in the paper.
+Code from this repository will reproduce the main figures in the paper and save them in the "figures" directory.
 The code will download the HCP 7T retinotopy data, Benson's V1 definitions, example NSD maps and a preprocessed TDM dataset. 
+
+1. HCP 7T retinotopy - doi:https://doi.org/10.1167/18.13.23
+2. NSD               - http://naturalscenesdataset.org
+3. TDM               - https://doi.org/10.1038/s41592-020-0941-6
 
 Dependencies:
 

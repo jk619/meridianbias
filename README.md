@@ -22,7 +22,7 @@ addpath(genpath('./'))
 
 do_1_download_data.m   % downloads necessary data
 do_2_preprocess.m      % prepares data for figures
-do_3_make_figures.m    % reproduce figures and save them in the newly created "figures" directory
+do_3_make_figures.m    % reproduce figures and saves them in the newly created "figures" directory
  
 ``` 
  

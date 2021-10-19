@@ -46,6 +46,5 @@ do_3_make_figures.m           % reproduce figures and saves them in the newly cr
  
 ``` 
 
- 
-Code (c) Jan Kurzawski
+Code written by JWK 10/19/21
 

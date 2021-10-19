@@ -9,7 +9,7 @@ if exist('prfresultsmgz','dir') && exist('benson_atlas','dir')
     
 else
     
-    str = input('Do you want to download HCP pRF solutions and Benson''s V1 definition (2.4 GB). Type Y/N and press return. ','s');
+    str = input('Do you want to download HCP pRF solutions and Benson''s V1 definition (2.4 GB). Type Y/N and press return./n ','s');
     
     if strcmp(str,'Y') || strcmp(str,'y')
         
@@ -51,7 +51,7 @@ if exist('data_tdm','dir')
     
 else
     
-    str = input('Do you want to download TDM data (600mb). Type Y/N and press return. ','s');
+    str = input('Do you want to download TDM data (600mb). Type Y/N and press return/n. ','s');
     
     if strcmp(str,'Y') || strcmp(str,'y')
         
@@ -78,7 +78,7 @@ end
 if exist('data_nsd','dir')
     
 else
-    str = input('Do you want to download NSD maps (1.6GB). Type Y/N and press return. ','s');
+    str = input('Do you want to download NSD maps (1.6GB). Type Y/N and press return/n. ','s');
     
     if strcmp(str,'Y') || strcmp(str,'y')
         

@@ -20,7 +20,8 @@ https://github.com/WinawerLab/ToolboxRegistry/tree/master/configurations/meridia
 
 If you are no using ToolboxToolbox and don't want to manually download the necessary dependencies, the do_0_check_dependencies.m can do it for you.
 
-To use the code, download or clone this github repository and navigate to the repository in the Matlab command window.
+To use the code, clone this github repositor and navigate to the repository in the Matlab command window.
+
 Example usage below:
 
 This is the content of masterscript.m

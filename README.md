@@ -13,7 +13,7 @@ All datasets are public and can be accessed using links below:
 
 1. Freesurfer's matlab functions (specifically MRIread.m). Toolbox containing this function comes with freesurfer and most probably is already in your path if you have freesurfer installed.
 
-Otherwise, it can be also from:
+Otherwise, it can be downloaded from:
 
 * [matlab.zip](https://downgit.github.io/#/home?url=https://github.com/freesurfer/freesurfer/tree/dev/matlab)
 

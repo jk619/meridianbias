@@ -48,8 +48,15 @@ elseif strcmp(str,'N') ||  strcmp(str,'n')
             
             disp('You need dependencies! See README.md')
             
+        else
+            
+            disp('Wrong input!')
+            
         end
     end
+else
+    disp('Wrong input!')
+    
 end
 
 

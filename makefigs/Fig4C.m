@@ -1,5 +1,5 @@
 % JK 03/2021
-clc
+
 fprintf('Reproducing Figure 4C.....\n')
 
 subjects = dir('./prfresultsmgz/');
@@ -19,8 +19,7 @@ myamp = NaN(2,length(subjects),length(moving),length(hemi));
 for s = 1:length(subjects)
     
     
-    clc
-    fprintf('Analysing subject %i/%i for Fig4C',s,length(subjects))
+   
     subj = subjects{s};
     
     

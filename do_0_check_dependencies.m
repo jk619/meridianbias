@@ -1,6 +1,6 @@
 clc
 clear
-str = input('Do you want to use ToolboxToolbox to setup paths? \nThis assumes you already have the meridianbias.json. Type Y/N and press return.\n','s');
+str = input('Do you want to use ToolboxToolbox to setup paths? \nThis assumes that you already have ToolboxToolbox and the meridianbias.json (see README.md). Type Y/N and press return.\n','s');
 
 if strcmp(str,'Y') || strcmp(str,'y')
     

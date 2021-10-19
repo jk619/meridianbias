@@ -1,4 +1,5 @@
 figure(9);clf
+fprintf('Reproducing Figure 9.....\n')
 
 %%
 sel = data0(:,7) == 1;

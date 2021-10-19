@@ -1,6 +1,6 @@
 % JK 03/2021
 
-clc
+
 fprintf('Reproducing Figure 3E.....\n')
 %find HCP subjects
 subjects = dir('./prfresultsmgz/');
@@ -31,8 +31,7 @@ myamp = zeros(2,length(subjects),2);
 
 for s = 1:length(subjects)
     
-    clc
-    fprintf('Analysing subject %i/%i for Fig3E',s,length(subjects))
+    
     subj = subjects{s};
     
     

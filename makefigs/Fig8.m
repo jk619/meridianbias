@@ -1,3 +1,4 @@
+fprintf('Reproducing Figure 8.....\n')
 data0 = data_bak;
 positiveBOLD = data0(:,10)<5.5 & ismember(data0(:,7),[1 2 3]) & all(isfinite(data0(:,combos{1})),2);
 data0 = data0(positiveBOLD,:);

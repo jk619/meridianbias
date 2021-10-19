@@ -1,3 +1,4 @@
+clc
 % add folder with figure scripts
 addpath(genpath('makefigs'))
 
@@ -48,5 +49,8 @@ print('-dpng','-r300','./figures/Fig9/d.png');
 close all
 Fig9e
 print('-dpng','-r300','./figures/Fig9/e.png');
-
+close all;
+%% Sinus figures
+Fig10
+print('-dpng','-r300','./figures/10.png');
 close all;

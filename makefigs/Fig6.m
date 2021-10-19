@@ -1,4 +1,7 @@
 figure(6);clf
+fprintf('Reproducing Figure 6.....\n')
+
+warning('off')
 [path2merge,b,c] = fileparts(which('mergestruct.m'));
 
 if contains(path2merge,'json')

@@ -21,7 +21,7 @@ else
         
         websave('./prfresultsmgz.zip', 'https://osf.io/tqprz/download');
         
-        disp('Unpacking HCP 7T retinotopy data')
+        disp('Unpacking  HCP 7T retinotopy data')
         disp('-------------------------------------------------------')
         unzip('prfresultsmgz.zip')
         
@@ -51,7 +51,7 @@ if exist('data_tdm','dir')
     
 else
     
-    str = input('Do you want to download TDM data (600mb). Type Y/N and press return\n.','s');
+    str = input('Do you want to download TDM data (600mb). Type Y/N and press return.\n','s');
     
     if strcmp(str,'Y') || strcmp(str,'y')
         
@@ -78,7 +78,7 @@ end
 if exist('data_nsd','dir')
     
 else
-    str = input('Do you want to download NSD maps (1.6GB). Type Y/N and press return\n.','s');
+    str = input('Do you want to download NSD maps (1.6GB). Type Y/N and press return.\n','s');
     
     if strcmp(str,'Y') || strcmp(str,'y')
         
@@ -88,7 +88,7 @@ else
         disp('-------------------------------------------------------')
         
         websave('./data_nsd.zip', 'https://osf.io/wc9r7/download');
-        disp('Unpacking NSD data')
+        disp('Unpacking  NSD data')
         disp('-------------------------------------------------------')
         unzip('./data_nsd.zip')
     elseif strcmp(str,'N') ||  strcmp(str,'n')

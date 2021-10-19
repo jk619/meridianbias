@@ -64,7 +64,7 @@ else
         disp('Downloading TDM data')
         disp('-------------------------------------------------------')
         
-        websave('./data_tdm/data_tdm.mat', 'https://osf.io/g79cj/download',opts);
+        websave('./data_tdm/data_tdm.mat', 'https://osf.io/u4x5y/download',opts);
         
     elseif strcmp(str,'N') ||  strcmp(str,'n')
         
@@ -91,7 +91,8 @@ else
         websave('./data_nsd.zip', 'https://osf.io/wc9r7/download',opts);
         disp('Unpacking  NSD data')
         disp('-------------------------------------------------------')
-        unzip('./data_nsd.zip')
+        unzip('./data_nsd.zip');
+        delete('./data_nsd.zip');
     elseif strcmp(str,'N') ||  strcmp(str,'n')
         
         error('You need the data!')

@@ -8,8 +8,9 @@ The code will download the HCP 7T retinotopy data, Benson's V1 definitions, exam
 
 Dependencies:
 
-Freesurfer's matlab functions (specifically MRIread.m). Toolbox containing this function comes with freesurfer
-but can be also downloaded from:
+Freesurfer's matlab functions (specifically MRIread.m). Toolbox containing this function comes with freesurfer and most probably is already in your path if you have freesurfer installed.
+
+Otherwise, it can be also downloaded from:
 
 * https://downgit.github.io/#/home?url=https://github.com/freesurfer/freesurfer/tree/dev/matlab
 

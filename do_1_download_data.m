@@ -3,7 +3,7 @@ close all
 
 rootPath=rootPath();
 cd(rootPath);
-
+opts = weboptions('CertificateFilename', '');
 if exist('prfresultsmgz','dir') && exist('benson_atlas','dir')
     
 else
@@ -18,7 +18,7 @@ else
         disp('Downloading HCP 7T retinotopy data - might take a while')
         disp('-------------------------------------------------------')
         
-        websave('./prfresultsmgz.zip', 'https://osf.io/tqprz/download');
+        websave('./prfresultsmgz.zip', 'https://osf.io/tqprz/download',opts);
         
         disp('Unpacking  HCP 7T retinotopy data')
         disp('-------------------------------------------------------')
@@ -30,8 +30,8 @@ else
         
         disp('Downloading Benson''s V1 definition')
         disp('-------------------------------------------------------')
-        websave('./benson_atlas/lh.varea.mgz','https://github.com/noahbenson/neuropythy/raw/master/neuropythy/lib/data/fsaverage/surf/lh.benson14_varea.v4_0.mgz');
-        websave('./benson_atlas/rh.varea.mgz','https://github.com/noahbenson/neuropythy/raw/master/neuropythy/lib/data/fsaverage/surf/rh.benson14_varea.v4_0.mgz');
+        websave('./benson_atlas/lh.varea.mgz','https://github.com/noahbenson/neuropythy/raw/master/neuropythy/lib/data/fsaverage/surf/lh.benson14_varea.v4_0.mgz',opts);
+        websave('./benson_atlas/rh.varea.mgz','https://github.com/noahbenson/neuropythy/raw/master/neuropythy/lib/data/fsaverage/surf/rh.benson14_varea.v4_0.mgz',opts);
         
         
     elseif strcmp(str,'N') ||  strcmp(str,'n')
@@ -62,7 +62,7 @@ else
         disp('Downloading TDM data')
         disp('-------------------------------------------------------')
         
-        websave('./data_tdm/data.mat', 'https://osf.io/g79cj/download');
+        websave('./data_tdm/data.mat', 'https://osf.io/g79cj/download',opts);
         
     elseif strcmp(str,'N') ||  strcmp(str,'n')
         
@@ -86,7 +86,7 @@ else
         disp('Downloading NSD data')
         disp('-------------------------------------------------------')
         
-        websave('./data_nsd.zip', 'https://osf.io/wc9r7/download');
+        websave('./data_nsd.zip', 'https://osf.io/wc9r7/download',opts);
         disp('Unpacking  NSD data')
         disp('-------------------------------------------------------')
         unzip('./data_nsd.zip')

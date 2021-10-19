@@ -1,5 +1,7 @@
 clc
 clear
+opts = weboptions('CertificateFilename', '');
+
 str = input('Do you want to use ToolboxToolbox to setup paths? \nThis assumes that you already have ToolboxToolbox and the meridianbias.json (see README.md). Type Y/N and press return.\n','s');
 
 if strcmp(str,'Y') || strcmp(str,'y')
@@ -43,7 +45,7 @@ elseif strcmp(str,'N') ||  strcmp(str,'n')
                 mkdir('utils')
             end
             
-            websave('./utils/matlab.zip', 'https://osf.io/pm54w/download');
+            websave('./utils/matlab.zip', 'https://osf.io/pm54w/download',opts);
             cd('utils');
             unzip('./matlab.zip');
             system('git clone https://github.com/cvnlab/knkutils');

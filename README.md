@@ -26,7 +26,7 @@ If you are using ToolboxToolbox (https://github.com/ToolboxHub/ToolboxToolbox) t
 
 ### __NOTE__:
 
-If you are not using ToolboxToolbox and don't want to manually download all the necessary dependencies, the do_0_check_dependencies.m can do it for you. Necessary files are going to be download to the "utils" folder in the directory of this repository. The size of the "utils" fodler is 13.9 MB.
+If you are not using ToolboxToolbox and don't want to manually download all the necessary dependencies, the do_0_check_dependencies.m can do it for you. Necessary files are going to be download to the "utils" folder in the directory of this repository. The size of the "utils" folder is 13.9 MB.
 
 ## **Running the code:**
 

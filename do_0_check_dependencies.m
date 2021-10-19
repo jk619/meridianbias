@@ -15,7 +15,7 @@ if strcmp(str,'Y') || strcmp(str,'y')
             error('You don''t have meridianbias.json file (see README.md)')
         end
         
-        
+    else
         error('ToolboxToolbox not detected in the path')
         
     end

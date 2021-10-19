@@ -1,32 +1,34 @@
 # The influence of non-neural factors on BOLD signal magnitude
-Code from this repository will reproduce the main figures in the paper and save them in the "figures" directory.
-The code will download the HCP 7T retinotopy data, Benson's V1 definitions, example NSD maps and a preprocessed TDM dataset. 
+Code from this repository will reproduce the main figures from the paper and save them in the "figures" directory. All scripts are written in MATLAB.
+The code will download the HCP 7T retinotopy data, Benson's V1 definitions, example NSD maps and a preprocessed TDM dataset. If used scripts and toolboxes are not in MATLAB's path (which is most likely) the code can take care of the dependencies and download all of the necessary files. You will be asked in the beginning of the masterscript.m if you want to do that.
 
-1. HCP 7T retinotopy - doi:https://doi.org/10.1167/18.13.23
-2. NSD               - http://naturalscenesdataset.org
-3. TDM               - https://doi.org/10.1038/s41592-020-0941-6
+## **Datasets:**
 
-Dependencies:
+All datasets are public and can be accessed using links below:
+1. [HCP 7T retinotopy](https://osf.io/esdu5/)
+2. [NSD](http://naturalscenesdataset.org)
+3. [TDM](https://osf.io/j2wsc/)
 
-Freesurfer's matlab functions (specifically MRIread.m). Toolbox containing this function comes with freesurfer
-but can be also downloaded from:
+## **Dependencies:**
 
-* https://downgit.github.io/#/home?url=https://github.com/freesurfer/freesurfer/tree/dev/matlab
+1. Freesurfer's matlab functions (specifically MRIread.m). Toolbox containing this function comes with freesurfer and most probably is already in your path if you have freesurfer installed.
 
-Two additional toolboxes that can be downloaded from github:
+Otherwise, it can be downloaded from:
 
-* cvncode https://github.com/cvnlab/cvncode
-* knkutils https://github.com/cvnlab/knkutils
+* [matlab.zip](https://downgit.github.io/#/home?url=https://github.com/freesurfer/freesurfer/tree/dev/matlab)
 
-If you are using ToolboxToolbox (https://github.com/ToolboxHub/ToolboxToolbox) to control paths and Matlab environemnt you can use this setup file to download all the necesseary dependancies.
-https://github.com/WinawerLab/ToolboxRegistry/tree/master/configurations/meridianbias.json
-The meridianbias.json file has to sit in configurations folder of ToolboxToolbox.
+2. Two additional toolboxes that can be downloaded from github:
 
-If you are not using ToolboxToolbox and don't want to manually download the necessary dependencies, the do_0_check_dependencies.m can do it for you.
+* [cvncode](https://github.com/cvnlab/cvncode)
+* [knkutils](https://github.com/cvnlab/knkutils)
 
-To use the code, clone this github repositor and navigate to the repository in the Matlab command window.
+3. If you are using ToolboxToolbox (https://github.com/ToolboxHub/ToolboxToolbox) to control paths you can use [this setup file](https://github.com/WinawerLab/ToolboxRegistry/tree/master/configurations/meridianbias.json) to download all the necesseary dependancies. The setup file has to sit in configurations folder of ToolboxToolbox.
 
-Example usage below:
+### __NOTE__:
+
+If you are not using ToolboxToolbox and don't want to manually download all the necessary dependencies, the do_0_check_dependencies.m can do it for you. Necessary files are going to be download to the "utils" folder in the directory of this repository. The size of the "utils" folder is 13.9 MB.
+
+## **Running the code:**
 
 This is the content of masterscript.m
 
@@ -44,7 +46,6 @@ do_2_preprocess.m             % prepares data for figures.
 do_3_make_figures.m           % reproduce figures and saves them in the newly created "figures" directory.
  
 ``` 
- 
- 
-Code (c) Jan Kurzawski
+
+Code written by JWK 10/19/21
 

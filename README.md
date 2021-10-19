@@ -2,9 +2,9 @@
 Code from this repository will reproduce the main figures in the paper and save them in the "figures" directory.
 The code will download the HCP 7T retinotopy data, Benson's V1 definitions, example NSD maps and a preprocessed TDM dataset. 
 
-1. HCP 7T retinotopy - doi:https://doi.org/10.1167/18.13.23
-2. NSD               - http://naturalscenesdataset.org
-3. TDM               - https://doi.org/10.1038/s41592-020-0941-6
+1. [HCP 7T retinotopy](https://doi.org/10.1167/18.13.23)
+2. [NSD](http://naturalscenesdataset.org)
+3. [TDM](https://doi.org/10.1038/s41592-020-0941-6)
 
 Dependencies:
 
@@ -19,8 +19,8 @@ Two additional toolboxes that can be downloaded from github:
 * cvncode https://github.com/cvnlab/cvncode
 * knkutils https://github.com/cvnlab/knkutils
 
-If you are using ToolboxToolbox (https://github.com/ToolboxHub/ToolboxToolbox) to control paths and Matlab environemnt you can use this setup file to download all the necesseary dependancies.
-https://github.com/WinawerLab/ToolboxRegistry/tree/master/configurations/meridianbias.json
+If you are using ToolboxToolbox (https://github.com/ToolboxHub/ToolboxToolbox) to control paths and Matlab environemnt you can use [this setup file](https://github.com/WinawerLab/ToolboxRegistry/tree/master/configurations/meridianbias.json) to download all the necesseary dependancies.
+
 The meridianbias.json file has to sit in configurations folder of ToolboxToolbox.
 
 If you are not using ToolboxToolbox and don't want to manually download the necessary dependencies, the do_0_check_dependencies.m can do it for you.

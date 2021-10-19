@@ -8,21 +8,21 @@ The code will download the HCP 7T retinotopy data, Benson's V1 definitions, exam
 
 Dependencies:
 
-Freesurfer's matlab functions (specifically MRIread.m). Toolbox comes with freesurfer
+Freesurfer's matlab functions (specifically MRIread.m). Toolbox containing this function comes with freesurfer
 but can be also downloaded from:
 
 * https://downgit.github.io/#/home?url=https://github.com/freesurfer/freesurfer/tree/dev/matlab
 
-Two additional toolboxes that can be downloaded from github
+Two additional toolboxes that can be downloaded from github:
 
 * cvncode https://github.com/cvnlab/cvncode
 * knkutils https://github.com/cvnlab/knkutils
 
 If you are using ToolboxToolbox (https://github.com/ToolboxHub/ToolboxToolbox) to control paths and Matlab environemnt you can use this setup file to download all the necesseary dependancies.
 https://github.com/WinawerLab/ToolboxRegistry/tree/master/configurations/meridianbias.json
+The meridianbias.json file has to sit in configurations folder of ToolboxToolbox.
 
-
-If you are no using ToolboxToolbox and don't want to manually download the necessary dependencies, the do_0_check_dependencies.m can do it for you.
+If you are not using ToolboxToolbox and don't want to manually download the necessary dependencies, the do_0_check_dependencies.m can do it for you.
 
 To use the code, clone this github repositor and navigate to the repository in the Matlab command window.
 

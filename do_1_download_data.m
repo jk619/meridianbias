@@ -80,7 +80,7 @@ end
 if exist('data_nsd','dir')
     
 else
-    str = input('Do you want to download NSD maps (1.3GB). Type Y/N and press return. ','s');
+    str = input('Do you want to download NSD maps (1.6GB). Type Y/N and press return. ','s');
     
     if strcmp(str,'Y') || strcmp(str,'y')
         
@@ -89,7 +89,7 @@ else
         disp('Downloading NSD data')
         disp('-------------------------------------------------------')
         
-        websave('./data_nsd.zip', 'https://osf.io/c635r/download');
+        websave('./data_nsd.zip', 'https://osf.io/wc9r7/download');
         disp('Unpacking NSD data')
         disp('-------------------------------------------------------')
         unzip('./data_nsd.zip')

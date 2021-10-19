@@ -8,7 +8,7 @@ if strcmp(str,'Y') || strcmp(str,'y')
         
         disp('ToolboxToolbox is in your path')
         
-        if exist(sprintf('%s/toolboxes/ToolboxRegistry/configurations/meridianbias.json',userFolder)) == 2
+        if exist(sprintf('%s/toolboxes/ToolboxRegistry/configurations/meridianbias.json',userpath)) == 2
             
             disp('meridianbias.json exists')
         else

@@ -44,15 +44,15 @@ elseif strcmp(str,'N') ||  strcmp(str,'n')
             end
             
             websave('./utils/matlab.zip', 'https://osf.io/pm54w/download');
-            cd('utils')
-            unzip('./matlab.zip')
-            system('git clone https://github.com/cvnlab/knkutils')
-            system('git clone https://github.com/cvnlab/cvncode')
-            cd('..')
+            cd('utils');
+            unzip('./matlab.zip');
+            system('git clone https://github.com/cvnlab/knkutils');
+            system('git clone https://github.com/cvnlab/cvncode');
+            cd('..');
             addpath(genpath('./utils'));
-            disp('-------------------')
-            disp('You are good to go!')
-            disp('-------------------')
+            disp('-------------------');
+            disp('You are good to go!');
+            disp('-------------------');
             
         elseif strcmp(str,'N') ||  strcmp(str,'n')
             error('You need dependencies! See README.md')

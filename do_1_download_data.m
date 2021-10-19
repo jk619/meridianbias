@@ -1,5 +1,4 @@
 clear
-clc
 close all
 
 rootPath=rootPath();

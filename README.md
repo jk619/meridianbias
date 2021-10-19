@@ -22,11 +22,11 @@ Two additional toolboxes that can be downloaded from github:
 * [cvncode](https://github.com/cvnlab/cvncode)
 * [knkutils](https://github.com/cvnlab/knkutils)
 
-If you are using ToolboxToolbox (https://github.com/ToolboxHub/ToolboxToolbox) to control paths you can use [this setup file](https://github.com/WinawerLab/ToolboxRegistry/tree/master/configurations/meridianbias.json) to download all the necesseary dependancies.
+If you are using ToolboxToolbox (https://github.com/ToolboxHub/ToolboxToolbox) to control paths you can use [this setup file](https://github.com/WinawerLab/ToolboxRegistry/tree/master/configurations/meridianbias.json) to download all the necesseary dependancies. The setup file has to sit in configurations folder of ToolboxToolbox.
 
-The setup file has to sit in configurations folder of ToolboxToolbox.
+### __NOTE__:
 
-If you are not using ToolboxToolbox and don't want to manually download the necessary dependencies, the do_0_check_dependencies.m can do it for you.
+If you are not using ToolboxToolbox and don't want to manually download all the necessary dependencies, the do_0_check_dependencies.m can do it for you. Necessary files are going to be download to the "utils" folder in the directory of this repository.
 
 ## **Running the code:**
 

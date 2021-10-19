@@ -25,7 +25,7 @@ The setup file has to sit in configurations folder of ToolboxToolbox.
 
 If you are not using ToolboxToolbox and don't want to manually download the necessary dependencies, the do_0_check_dependencies.m can do it for you.
 
-## To use the code, clone this github repository and navigate to the repository in the Matlab command window. Open the masterscript.m and evaluate each cell starting from the top. You can also run masterscrip.m
+## To use the code, clone this github repository and navigate to the repository in the Matlab command window. Open the masterscript.m and run it.
 
 Example usage below:
 

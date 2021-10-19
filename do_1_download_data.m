@@ -2,8 +2,6 @@ clear
 clc
 close all
 
-tbUse meridianbias
-
 rootPath=rootPath();
 cd(rootPath);
 

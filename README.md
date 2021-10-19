@@ -1,18 +1,20 @@
 # The influence of non-neural factors on BOLD signal magnitude
-Code to reproduce the figures 3C and 4C 
+Code that will reproduce the main figures in the paper
 
-The code will download the HCP 7T retinotopy data from osf together with Benson's V1 definition. 
-Figures 3E and 4C are going to be reproduced using Fig3E.m and Fig4C.m
+The code will download the HCP 7T retinotopy data, Benson's V1 definitions, example NSD maps and a preprocessed TDM dataset 
 
 Dependencies:
-* freesurfer's matlab functions (specifically MRIread.m). Toolbox comes with freesurfer
+Freesurfer's matlab functions (specifically MRIread.m). Toolbox comes with freesurfer
 but can be also downloaded from:
+* https://downgit.github.io/#/home?url=https://github.com/freesurfer/freesurfer/tree/dev/matlab
 
-https://downgit.github.io/#/home?url=https://github.com/freesurfer/freesurfer/tree/dev/matlab
+Two additional toolboxes that can be downloaded from git
+
+* cvncode https://github.com/cvnlab/cvncode
+* knkutils https://github.com/cvnlab/knkutils
 
 
-
-To use the code, download or clone this github repository, then navigate to the repository in the Matlab command window.
+To use the code, download or clone this github repository, navigate to the repository in the Matlab command window.
 Example usage below:
 
 ``` Matlab

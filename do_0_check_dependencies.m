@@ -40,26 +40,17 @@ elseif strcmp(str,'N') ||  strcmp(str,'n')
             cd('..')
             
             addpath(genpath('./utils'));
+            disp('-------------------')
+            disp('You are good to go!')
+            disp('-------------------')
             
         elseif strcmp(str,'N') ||  strcmp(str,'n')
             
             disp('You need dependencies! See README.md')
             
-            if exist('cvnlookup.m') == 2 && exist('MRIread.m') == 2 && exist('calcconfusionmatrix.m')
-                
-                disp('-------------------')
-                disp('You are good to go!')
-                disp('-------------------')
-                
-            else
-                
-                disp('Something went wrong with the download\n')
-
-            end
         end
-        
-        
     end
 end
+
 
 

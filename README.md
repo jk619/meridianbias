@@ -26,9 +26,13 @@ Example usage below:
  % Navigate to the correct directory and add all to path
 
 addpath(genpath('./'))
-
+%%
+do_0_check_dependencies.m
+%%
 do_1_download_data.m   % downloads necessary data
+%%
 do_2_preprocess.m      % prepares data for figures
+%%
 do_3_make_figures.m    % reproduce figures and saves them in the newly created "figures" directory
  
 ``` 

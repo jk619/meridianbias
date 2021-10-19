@@ -21,8 +21,9 @@ elseif strcmp(str,'N') ||  strcmp(str,'n')
     else
         
         str = input('Do you want to download necessary toolboxes to utils folder in this directory. Type Y/N and press return.\n','s');
-        if strcmp(str,'Y') || strcmp(str,'y') 
+        if strcmp(str,'Y') || strcmp(str,'y')
             if ~exist('./utils','dir')
+                mkdir('utils')
             end
             
             websave('./utils/matlab.zip', 'https://osf.io/pm54w/download');
@@ -37,14 +38,14 @@ elseif strcmp(str,'N') ||  strcmp(str,'n')
             disp('-------------------')
             
         elseif strcmp(str,'N') ||  strcmp(str,'n')
-            disp('You need dependencies! See README.md')
+            error('You need dependencies! See README.md')
         else
             
-            disp('Wrong input!')
+            error('Wrong input!')
         end
     end
 else
-    disp('Wrong input!')
+    error('Wrong input!')
 end
 
 

@@ -3,8 +3,10 @@ Code will reproduce the main figures in the paper.
 The code will download the HCP 7T retinotopy data, Benson's V1 definitions, example NSD maps and a preprocessed TDM dataset. 
 
 Dependencies:
+
 Freesurfer's matlab functions (specifically MRIread.m). Toolbox comes with freesurfer
 but can be also downloaded from:
+
 * https://downgit.github.io/#/home?url=https://github.com/freesurfer/freesurfer/tree/dev/matlab
 
 Two additional toolboxes that can be downloaded from github

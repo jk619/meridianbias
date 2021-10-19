@@ -9,7 +9,7 @@ if exist('prfresultsmgz','dir') && exist('benson_atlas','dir')
     
 else
     
-    str = input('Do you want to download HCP pRF solutions and Benson''s V1 definition. Type Y/N and press return. ','s');
+    str = input('Do you want to download HCP pRF solutions and Benson''s V1 definition (2.4 GB). Type Y/N and press return. ','s');
     
     if strcmp(str,'Y') || strcmp(str,'y')
         

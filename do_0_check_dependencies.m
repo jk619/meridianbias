@@ -48,8 +48,8 @@ elseif strcmp(str,'N') ||  strcmp(str,'n')
             websave('./utils/matlab.zip', 'https://osf.io/pm54w/download',opts);
             cd('utils');
             unzip('./matlab.zip');
-            system('git clone https://github.com/cvnlab/knkutils.git');
-            system('git clone https://github.com/cvnlab/cvncode.git');
+            system('git -c http.sslVerify=false clone https://github.com/cvnlab/knkutils.git');
+            system('git -c http.sslVerify=false clone https://github.com/cvnlab/cvncode.git');
             cd('..');
             addpath(genpath('./utils'));
             disp('-------------------');

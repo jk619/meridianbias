@@ -4,7 +4,7 @@ The code will download the HCP 7T retinotopy data, Benson's V1 definitions, exam
 
 ## **Datasets:**
 
-All datasets are public and can be downloaded using links below:
+All datasets are public and can be accessed using links below:
 1. [HCP 7T retinotopy](https://osf.io/esdu5/)
 2. [NSD](http://naturalscenesdataset.org)
 3. [TDM](https://osf.io/j2wsc/)

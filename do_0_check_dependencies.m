@@ -52,6 +52,7 @@ elseif strcmp(str,'N') ||  strcmp(str,'n')
             system('git -c http.sslVerify=false clone https://github.com/cvnlab/cvncode.git');
             cd('..');
             addpath(genpath('./utils'));
+            delete('./utils/matlab.zip');
             disp('-------------------');
             disp('You are good to go!');
             disp('-------------------');

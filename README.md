@@ -7,7 +7,7 @@ Freesurfer's matlab functions (specifically MRIread.m). Toolbox comes with frees
 but can be also downloaded from:
 * https://downgit.github.io/#/home?url=https://github.com/freesurfer/freesurfer/tree/dev/matlab
 
-Two additional toolboxes that can be downloaded from git
+Two additional toolboxes that can be downloaded from github
 
 * cvncode https://github.com/cvnlab/cvncode
 * knkutils https://github.com/cvnlab/knkutils

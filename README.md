@@ -12,7 +12,7 @@ Freesurfer's matlab functions (specifically MRIread.m). Toolbox containing this 
 
 Otherwise, it can be also downloaded from:
 
-* https://downgit.github.io/#/home?url=https://github.com/freesurfer/freesurfer/tree/dev/matlab
+* [matlab.zip](https://downgit.github.io/#/home?url=https://github.com/freesurfer/freesurfer/tree/dev/matlab)
 
 Two additional toolboxes that can be downloaded from github:
 

@@ -21,7 +21,7 @@ Two additional toolboxes that can be downloaded from github:
 
 If you are using ToolboxToolbox (https://github.com/ToolboxHub/ToolboxToolbox) to control paths you can use [this setup file](https://github.com/WinawerLab/ToolboxRegistry/tree/master/configurations/meridianbias.json) to download all the necesseary dependancies.
 
-The meridianbias.json file has to sit in configurations folder of ToolboxToolbox.
+The setup file has to sit in configurations folder of ToolboxToolbox.
 
 If you are not using ToolboxToolbox and don't want to manually download the necessary dependencies, the do_0_check_dependencies.m can do it for you.
 

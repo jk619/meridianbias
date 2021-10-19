@@ -25,7 +25,7 @@ The setup file has to sit in configurations folder of ToolboxToolbox.
 
 If you are not using ToolboxToolbox and don't want to manually download the necessary dependencies, the do_0_check_dependencies.m can do it for you.
 
-To use the code, clone this github repositor and navigate to the repository in the Matlab command window.
+## To use the code, clone this github repository and navigate to the repository in the Matlab command window. Open the masterscript.m and evaluate each cell starting from the top. You can also run masterscrip.m
 
 Example usage below:
 
@@ -45,7 +45,7 @@ do_2_preprocess.m             % prepares data for figures.
 do_3_make_figures.m           % reproduce figures and saves them in the newly created "figures" directory.
  
 ``` 
- 
+
  
 Code (c) Jan Kurzawski
 

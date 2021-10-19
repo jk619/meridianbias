@@ -1,6 +1,6 @@
 clc
 clear
-str = input('Do you want to use ToolboxToolbox to setup paths? \nThis assumes you already have the meridianbias.json Y/N\n','s');
+str = input('Do you want to use ToolboxToolbox to setup paths? \nThis assumes you already have the meridianbias.json. Type Y/N and press return.\n','s');
 
 if strcmp(str,'Y') || strcmp(str,'y')
     
@@ -24,7 +24,7 @@ elseif strcmp(str,'N') ||  strcmp(str,'n')
         
     else
         
-        str = input('Do you want to download necessary toolboxes to utils folder in this directory Y/N?\n','s');
+        str = input('Do you want to download necessary toolboxes to utils folder in this directory. Type Y/N and press return.\n','s');
         if strcmp(str,'Y') || strcmp(str,'y')
             
             if ~exist('./utils','dir')

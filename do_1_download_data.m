@@ -23,6 +23,8 @@ else
         disp('Unpacking  HCP 7T retinotopy data')
         disp('-------------------------------------------------------')
         unzip('prfresultsmgz.zip')
+        delete('./prfresultsmgz.zip');
+
         
         % download Benson's atlas to locate V1 ROI.
         
@@ -62,7 +64,7 @@ else
         disp('Downloading TDM data')
         disp('-------------------------------------------------------')
         
-        websave('./data_tdm/data.mat', 'https://osf.io/g79cj/download',opts);
+        websave('./data_tdm/data_tdm.mat', 'https://osf.io/g79cj/download',opts);
         
     elseif strcmp(str,'N') ||  strcmp(str,'n')
         

@@ -1,4 +1,4 @@
-load ./data_tdm/data;
+load ./data_tdm/data_tdm;
 
 hemi_str = {'lh';'rh'};
 wh = 9;

@@ -4,6 +4,23 @@ str = input('Do you want to use ToolboxToolbox to setup paths? \nThis assumes th
 
 if strcmp(str,'Y') || strcmp(str,'y')
     
+    if exist('tbUse.m','file') == 2
+        
+        disp('ToolboxToolbox is in your path')
+        
+        if exist(sprintf('%s/toolboxes/ToolboxRegistry/configurations/meridianbias.json',userFolder)) == 2
+            
+            disp('meridianbias.json exists')
+        else
+            error('You don''t have meridianbias.json file (see README.md)')
+        end
+        
+        
+        error('ToolboxToolbox not detected in the path')
+        
+    end
+    
+    
     tbUse meridianbias
     
     if exist('cvnlookup.m') == 2 && exist('MRIread.m') == 2 && exist('calcconfusionmatrix.m');

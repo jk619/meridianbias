@@ -27,13 +27,13 @@ Example usage below:
 
 addpath(genpath('./'))
 %%
-do_0_check_dependencies.m
+do_0_check_dependencies.m     % check if all the necessary functions are in the path.
 %%
-do_1_download_data.m   % downloads necessary data
+do_1_download_data.m          % downloads necessary data.
 %%
-do_2_preprocess.m      % prepares data for figures
+do_2_preprocess.m             % prepares data for figures.
 %%
-do_3_make_figures.m    % reproduce figures and saves them in the newly created "figures" directory
+do_3_make_figures.m           % reproduce figures and saves them in the newly created "figures" directory.
  
 ``` 
  

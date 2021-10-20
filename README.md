@@ -11,7 +11,8 @@ All datasets are public and can be accessed using links below:
 
 ## **Dependencies:**
 
-1. Freesurfer's matlab functions (specifically MRIread.m). Toolbox containing this function comes with freesurfer and most probably is already in your path if you have freesurfer installed.
+1. Freesurfer's matlab functions (specifically functions to read surfaces). Toolbox containing this function comes with freesurfer 
+and most probably is already in your path if you have freesurfer installed.
 
 Otherwise, it can be downloaded from:
 

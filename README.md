@@ -33,7 +33,7 @@ If you are not using ToolboxToolbox and don't want to manually download all the 
 This is the content of masterscript.m
 
 ``` Matlab
-% Navigate to the correct directory and add all to the path. You will be 
+% Navigate to the directory of this repository and run masterscript.m You will be 
 % asked a series of questions about dependencies and downloading the data.
 % You can reply by typing Y for Yes or N for No.
 

@@ -15,7 +15,7 @@ All datasets are public and can be accessed using links below:
 
 Otherwise, it can be downloaded from:
 
-* [matlab.zip](https://downgit.github.io/#/home?url=https://github.com/freesurfer/freesurfer/tree/dev/matlab)
+* [matlab.zip](https://osf.io/8bxrk/)
 
 2. Two additional toolboxes that can be downloaded from github:
 

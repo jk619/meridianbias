@@ -1,5 +1,5 @@
 figure(10);clf
-fprintf('Reproducing Figure 10 D&F.....\n')
+fprintf('Reproducing Figure 10 D&F\n')
 subplot(1,2,1)
 load('stan_cmaps','mpl_redyellowblue')
 mydata = data_bak;

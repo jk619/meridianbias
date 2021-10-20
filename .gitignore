@@ -1,2 +1,6 @@
-./figures/*.png
-./figures/Fig9
+./figures/*.eps
+./figures/
+./benson_atlas/
+./data_nsd/
+./data_hcp/
+./data_tdm/

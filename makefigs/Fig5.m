@@ -1,4 +1,4 @@
-fprintf('Reproducing Figure 5.....\n')
+fprintf('Reproducing Figure 5......\n')
 
 cmap(1,:) = [0.8941    0.1020    0.1098];
 cmap(2,:) = [0.2157    0.4941    0.7216];

@@ -2,7 +2,18 @@ clc
 clear
 opts = weboptions('CertificateFilename', '');
 
-str = input('Do you want to use ToolboxToolbox to setup paths? \nThis assumes that you already have ToolboxToolbox and the meridianbias.json (see README.md). Type Y/N and press return.\n','s');
+if license('test','statistics_toolbox') && license('test','optimization_toolbox') && license('test','distrib_computing_toolbox')
+    
+    disp('-------------------------------------------------------------')
+    disp('You have all the necessary Matlab toolboxes to run this code.')
+    disp('-------------------------------------------------------------')
+    
+else
+    error('Some of the needed Matlab toolboxes are missing')
+end
+
+
+str = input('\nDo you want to use ToolboxToolbox to setup paths? \nThis assumes that you already have ToolboxToolbox and the meridianbias.json (see README.md). Type Y/N and press return.\n','s');
 
 if strcmp(str,'Y') || strcmp(str,'y')
     

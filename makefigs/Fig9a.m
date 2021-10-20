@@ -19,7 +19,7 @@ caxis([0 6]);
 ylabel('%BOLD');
 xlabel(['Polar angle' newline 'Horizontal     ->     Vertical' ]);
 
-cmap = cbrewer('seq','Greens',100);
+cmap = cbrewer('seq','Greens',100,'pchip');
 cmap = [[1 1 1];cmap];
 colormap(cmap);
 xticks(0:15:90);

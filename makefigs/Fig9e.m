@@ -8,8 +8,8 @@ cmatrix(cmatrix == 0) = NaN;
 corrforlater(2,:) = cmatrix(1,2:end);
 %%
 
-cmap1 = cbrewer('seq','PuBu',100);
-cmap2 = cbrewer('seq','Purples',100);
+cmap1 = cbrewer('seq','PuBu',100,'pchip');
+cmap2 = cbrewer('seq','Purples',100,'pchip');
 
 cmap2 = [flipud(cmap2);cmap2];
 cmatrix = flipud(corrforlater(2,:));

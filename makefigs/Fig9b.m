@@ -12,7 +12,7 @@ set(gca,'YDir','normal')
 caxis([0 6])
 ylabel('Corrected %BOLD')
 xlabel(['Polar angle' newline 'Horizontal     ->     Vertical' ])
-cmap = cbrewer('seq','Purples',100);
+cmap = cbrewer('seq','Purples',100,'pchip');
 cmap = [[1 1 1];cmap];
 
 colormap(cmap)

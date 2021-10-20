@@ -26,9 +26,9 @@ mymeans = [bigmean_b;bigmean_a]';
 myerrors = [bigstd_b;bigstd_a]';
 
 
-cmap = cbrewer('seq','YlGn',100);
+cmap = cbrewer('seq','YlGn',100,'pchip');
 ccmap(1,:) = cmap(end-10,:);
-cmap = cbrewer('seq','Purples',100);
+cmap = cbrewer('seq','Purples',100,'pchip');
 ccmap(2,:) = cmap(end-10,:);
 
 for b=1:2

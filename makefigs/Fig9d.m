@@ -1,6 +1,6 @@
 figure(9999)
-cmap1 = cbrewer('seq','Greens',100);
-cmap2 = cbrewer('seq','Purples',100);
+cmap1 = cbrewer('seq','Greens',100,'pchip');
+cmap2 = cbrewer('seq','Purples',100,'pchip');
 
 cmap1 = [flipud(cmap1);cmap1];
 cmatrix = flipud(corrforlater(1,:));

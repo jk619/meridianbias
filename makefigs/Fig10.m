@@ -64,7 +64,7 @@ for thr = mythrs
     ct = ct + 1;
 end
 
-cmap = cbrewer('seq','Blues',length(mythrs));
+cmap = cbrewer('seq','Blues',length(mythrs),'pchip');
 for s = (2 : size(myline,1))
     plot(binx,myline(s,:),'Linewidth',5,'Color',cmap(s,:)); hold on
 end

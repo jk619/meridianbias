@@ -16,12 +16,12 @@
 % Figure 9
 % FIgure 10 D-F
 
-% Some panels from Figure 10 are not reproduced as they were made with 
-% different software
+% Some panels from Figure 10 are not reproduced as they were eddited with 
+% additional software.
 
 % Figure 10A was made in slicer ('https://www.slicer.org')
 % Figure 10B, Figure 10C and Figure 10E were additioanly modified in
-% Illustrator
+% Illustrator.
 
 addpath(genpath('./'))
 %%

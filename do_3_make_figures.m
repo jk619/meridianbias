@@ -13,7 +13,6 @@ print('-dpng','-r300','./figures/3.png');
 close all
 Fig4C
 print('-dpng','-r300','./figures/4.png');
-clc
 %% reproduce %BOLD vs cortical depths
 close all
 Fig5

@@ -45,7 +45,7 @@ elseif strcmp(str,'N') ||  strcmp(str,'n')
                 mkdir('utils')
             end
             
-            websave('./utils/matlab.zip', 'https://osf.io/pm54w/download',opts);
+            websave('./utils/matlab.zip', 'https://osf.io/8bxrk/download',opts);
             cd('utils');
             unzip('./matlab.zip');
             system('git -c http.sslVerify=false clone https://github.com/cvnlab/knkutils.git');

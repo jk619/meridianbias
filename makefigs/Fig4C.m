@@ -2,7 +2,7 @@
 
 fprintf('Reproducing Figure 4C.....\n')
 
-subjects = dir('./prfresultsmgz/');
+subjects = dir('./data_hcp/prfresultsmgz/');
 subjects=subjects(~ismember({subjects.name},{'999997','999998','999999'}));
 subjects = {subjects.name};
 
@@ -19,7 +19,7 @@ myamp = NaN(2,length(subjects),length(moving),length(hemi));
 for s = 1:length(subjects)
     
     
-   
+    
     subj = subjects{s};
     
     
@@ -27,12 +27,13 @@ for s = 1:length(subjects)
     for h = 1:length(hemi)
         
         
-        ecc = MRIread(sprintf('./prfresultsmgz/%s/%s.fit1_ecc.mgz',subj,hemi{h}));
-        hvmap = MRIread(sprintf('./prfresultsmgz/%s/%s.fit1_ang.mgz',subj,hemi{h}));
-        meanvol = MRIread(sprintf('./prfresultsmgz/%s/%s.fit1_meanvol.mgz',subj,hemi{h}));
-        atlas = MRIread(sprintf('./benson_atlas/%s.varea.mgz',hemi{h}));
-        glmres = MRIread(sprintf('./prfresultsmgz/%s/%s.fit1_gain.mgz',subj,hemi{h}));
+        ecc = MRIread(sprintf('./data_hcp/prfresultsmgz/%s/%s.fit1_ecc.mgz',subj,hemi{h}));
+        hvmap = MRIread(sprintf('./data_hcp/prfresultsmgz/%s/%s.fit1_ang.mgz',subj,hemi{h}));
+        meanvol = MRIread(sprintf('./data_hcp/prfresultsmgz/%s/%s.fit1_meanvol.mgz',subj,hemi{h}));
+        glmres = MRIread(sprintf('./data_hcp/prfresultsmgz/%s/%s.fit1_gain.mgz',subj,hemi{h}));
         glmres = (glmres.vol'./meanvol.vol')*100;
+        
+        atlas = MRIread(sprintf('./benson_atlas/%s.varea.mgz',hemi{h}));
         
         %
         if h == 1
@@ -112,14 +113,14 @@ for v = 1 : length(moving)
     horz = mymeanbeta_nohemi(1,:,v);
     vert = mymeanbeta_nohemi(2,:,v);
     
-
+    
     for s = 1 : length(subjects)
         
         
         assym_subj(s,v) = (horz(s) - vert(s))/((vert(s)+horz(s))/2)*100;
         
     end
-
+    
 end
 
 %%

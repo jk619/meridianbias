@@ -3,7 +3,7 @@
 
 fprintf('Reproducing Figure 3E.....\n')
 %find HCP subjects
-subjects = dir('./prfresultsmgz/');
+subjects = dir('./data_hcp/prfresultsmgz/');
 
 % remove average subjects
 subjects=subjects(~ismember({subjects.name},{'999997','999998','999999'}));
@@ -39,10 +39,10 @@ for s = 1:length(subjects)
     for h = 1:length(hemi)
         
         % load maps  (eccentricity, polar angle and mean volume and gain)
-        ecc = MRIread(sprintf('./prfresultsmgz/%s/%s.fit1_ecc.mgz',subj,hemi{h}));
-        hvmap = MRIread(sprintf('./prfresultsmgz/%s/%s.fit1_ang.mgz',subj,hemi{h}));
-        meanvol = MRIread(sprintf('./prfresultsmgz/%s/%s.fit1_meanvol.mgz',subj,hemi{h}));
-        glmres = MRIread(sprintf('./prfresultsmgz/%s/%s.fit1_gain.mgz',subj,hemi{h}));
+        ecc = MRIread(sprintf('./data_hcp/prfresultsmgz/%s/%s.fit1_ecc.mgz',subj,hemi{h}));
+        hvmap = MRIread(sprintf('./data_hcp/prfresultsmgz/%s/%s.fit1_ang.mgz',subj,hemi{h}));
+        meanvol = MRIread(sprintf('./data_hcp/prfresultsmgz/%s/%s.fit1_meanvol.mgz',subj,hemi{h}));
+        glmres = MRIread(sprintf('./data_hcp/prfresultsmgz/%s/%s.fit1_gain.mgz',subj,hemi{h}));
 
         % load Benson's atlas with ROIs
         atlas = MRIread(sprintf('./benson_atlas/%s.varea.mgz',hemi{h}));

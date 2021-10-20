@@ -18,12 +18,12 @@ else
         disp('Downloading HCP 7T retinotopy data - might take a while')
         disp('-------------------------------------------------------')
         
-        websave('./prfresultsmgz.zip', 'https://osf.io/tqprz/download',opts);
+        websave('./data_hcp.zip', 'https://osf.io/tqprz/download',opts);
         
         disp('Unpacking  HCP 7T retinotopy data')
         disp('-------------------------------------------------------')
-        unzip('prfresultsmgz.zip')
-        delete('./prfresultsmgz.zip');
+        unzip('data_hcp.zip')
+        delete('./data_hcp.zip');
 
         
         % download Benson's atlas to locate V1 ROI.

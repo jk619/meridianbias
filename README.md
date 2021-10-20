@@ -42,7 +42,7 @@ This is the content of masterscript.m
 % represents one panel.
 
 % Reproduced figures:
-% Figure 3E
+% Figure 3E - for HCP data (same code can be used to run it on TDM and NSD)
 % Figure 4C - for HCP data (same code can be used to run it on TDM and NSD)
 % Figure 5
 % Figure 6

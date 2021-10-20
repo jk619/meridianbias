@@ -8,7 +8,7 @@ end
 %% reproduce Figure 3E for HCP data
 close all
 Fig3E
-print('-dpng','-r300','./figures/3.png');
+saveas(gcf,'Fig3E','epsc')
 %% reproduce incremental asymmetry for HCP in Figure 4C.
 close all
 Fig4C

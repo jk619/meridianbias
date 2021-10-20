@@ -22,7 +22,7 @@ else
         
         disp('Unpacking  HCP 7T retinotopy data')
         disp('-------------------------------------------------------')
-        unzip('data_hcp.zip')
+        unzip('data_hcp.zip','data_hcp');
         delete('./data_hcp.zip');
 
         

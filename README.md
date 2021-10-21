@@ -43,7 +43,7 @@ This is the content of masterscript.m
 % asked a series of questions about dependencies and downloading the data.
 % You can reply by typing Y for Yes or N for No.
 
-% All figures are saved as a *.png. Due to it's complexity Figure 9 is
+% All figures are saved as a *.eps. Due to it's complexity Figure 9 is
 % saved as a seperate folder inside "figures" folder where each png file 
 % represents one panel.
 

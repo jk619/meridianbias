@@ -15,18 +15,19 @@ if strcmp(str,'Y') || strcmp(str,'y')
         
         fprintf('-------------------------------------------------------\n')
         fprintf('Downloading HCP 7T retinotopy data - might take a while\n')
-        fprintf('-------------------------------------------------------\n\n')
+        fprintf('-------------------------------------------------------\n')
         
         websave('./data_hcp.zip', 'https://osf.io/tqprz/download',opts);
         
-        fprintf('Unpacking   HCP 7T retinotopy data\n\n')
+        fprintf('-------------------------------------------------------\n')
+        fprintf('Unpacking   HCP 7T retinotopy data\n')
         fprintf('-------------------------------------------------------\n')
         unzip('data_hcp.zip','data_hcp');
         delete('./data_hcp.zip');
         
         
         mkdir('benson_atlas')
-        
+        fprintf('-------------------------------------------------------\n')
         fprintf('Downloading Benson''s V1 definition\n')
         fprintf('-------------------------------------------------------\n')
         websave('./benson_atlas/lh.varea.mgz','https://github.com/noahbenson/neuropythy/raw/master/neuropythy/lib/data/fsaverage/surf/lh.benson14_varea.v4_0.mgz',opts);
@@ -55,6 +56,7 @@ if strcmp(str,'Y') || strcmp(str,'y')
             fprintf('-------------------------------------------------------\n')
             
             websave('./data_nsd.zip', 'https://osf.io/wc9r7/download',opts);
+            fprintf('-------------------------------------------------------\n')
             fprintf('Unpacking   NSD data\n')
             fprintf('-------------------------------------------------------\n')
             unzip('./data_nsd.zip');

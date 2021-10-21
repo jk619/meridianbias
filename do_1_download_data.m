@@ -55,7 +55,7 @@ if strcmp(str,'Y') || strcmp(str,'y')
             fprintf('-------------------------------------------------------\n')
             
             websave('./data_nsd.zip', 'https://osf.io/wc9r7/download',opts);
-            fprintf('Unpacking   NSD data')
+            fprintf('Unpacking   NSD data\n')
             fprintf('-------------------------------------------------------\n')
             unzip('./data_nsd.zip');
             delete('./data_nsd.zip');

@@ -4,15 +4,14 @@ close all
 rootPath=rootPath();
 cd(rootPath);
 opts = weboptions('CertificateFilename', '');
-if exist('prfresultsmgz','dir') && exist('benson_atlas','dir')
+
+str = input('Do you want to download the data (~5 GB). Type Y/N and press return.\n','s');
+
+if strcmp(str,'Y') || strcmp(str,'y')
     
-else
-    
-    str = input('Do you want to download HCP pRF solutions and Benson''s V1 definition (2.4 GB). Type Y/N and press return.\n','s');
-    
-    if strcmp(str,'Y') || strcmp(str,'y')
+    if exist('./data_hcp/prfresultsmgz/100610/lh.fit1_gain.mgz','file') && exist('./benson_atlas/lh.varea.mgz','file')
         
-        % download pRF maps for each subject in HCP dataset (n=181).
+    else
         
         disp('-------------------------------------------------------')
         disp('Downloading HCP 7T retinotopy data - might take a while')
@@ -24,9 +23,7 @@ else
         disp('-------------------------------------------------------')
         unzip('data_hcp.zip','data_hcp');
         delete('./data_hcp.zip');
-
         
-        % download Benson's atlas to locate V1 ROI.
         
         mkdir('benson_atlas')
         
@@ -35,70 +32,44 @@ else
         websave('./benson_atlas/lh.varea.mgz','https://github.com/noahbenson/neuropythy/raw/master/neuropythy/lib/data/fsaverage/surf/lh.benson14_varea.v4_0.mgz',opts);
         websave('./benson_atlas/rh.varea.mgz','https://github.com/noahbenson/neuropythy/raw/master/neuropythy/lib/data/fsaverage/surf/rh.benson14_varea.v4_0.mgz',opts);
         
-        
-    elseif strcmp(str,'N') ||  strcmp(str,'n')
-        
-        error('You need the data!')
-        
-    else
-        
-        error('Wrong input!')
+        if exist('./data_tdm/data_tdm.mat','file') == 2
+            
+        else
+
+            mkdir('data_tdm')
+                        
+            disp('-------------------------------------------------------')
+            disp('Downloading TDM data')
+            disp('-------------------------------------------------------')
+            
+            websave('./data_tdm/data_tdm.mat', 'https://osf.io/u4x5y/download',opts);
+            
+        end
+
+        if exist('./data_nsd/lh.B0_or.mgz','file')
+            
+        else
+            
+            disp('-------------------------------------------------------')
+            disp('Downloading NSD data')
+            disp('-------------------------------------------------------')
+            
+            websave('./data_nsd.zip', 'https://osf.io/wc9r7/download',opts);
+            disp('Unpacking  NSD data')
+            disp('-------------------------------------------------------')
+            unzip('./data_nsd.zip');
+            delete('./data_nsd.zip');
+            
+        end
     end
     
+elseif strcmp(str,'N') ||  strcmp(str,'n')
     
-end
-
-if exist('data_tdm','dir')
+    error('You need the data!')
     
 else
     
-    str = input('Do you want to download TDM data (600 MB). Type Y/N and press return.\n','s');
+    error('Wrong input!')
     
-    if strcmp(str,'Y') || strcmp(str,'y')
-        
-        mkdir('data_tdm')
-        
-        % download pRF maps for each subject in HCP dataset (n=181).
-        
-        disp('-------------------------------------------------------')
-        disp('Downloading TDM data')
-        disp('-------------------------------------------------------')
-        
-        websave('./data_tdm/data_tdm.mat', 'https://osf.io/u4x5y/download',opts);
-        
-    elseif strcmp(str,'N') ||  strcmp(str,'n')
-        
-        error('You need the data!')
-        
-    else
-        
-        error('Wrong input!')
-    end
-end
-
-if exist('data_nsd','dir')
     
-else
-    str = input('Do you want to download NSD maps (1.6 GB). Type Y/N and press return.\n','s');
-    
-    if strcmp(str,'Y') || strcmp(str,'y')
-        
-        
-        disp('-------------------------------------------------------')
-        disp('Downloading NSD data')
-        disp('-------------------------------------------------------')
-        
-        websave('./data_nsd.zip', 'https://osf.io/wc9r7/download',opts);
-        disp('Unpacking  NSD data')
-        disp('-------------------------------------------------------')
-        unzip('./data_nsd.zip');
-        delete('./data_nsd.zip');
-    elseif strcmp(str,'N') ||  strcmp(str,'n')
-        
-        error('You need the data!')
-        
-    else
-        
-        error('Wrong input!')
-    end
 end

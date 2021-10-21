@@ -15,11 +15,11 @@ if strcmp(str,'Y') || strcmp(str,'y')
         
         fprintf('-------------------------------------------------------\n')
         fprintf('Downloading HCP 7T retinotopy data - might take a while\n')
-        fprintf('-------------------------------------------------------\n')
+        fprintf('-------------------------------------------------------\n\n')
         
         websave('./data_hcp.zip', 'https://osf.io/tqprz/download',opts);
         
-        fprintf('Unpacking  HCP 7T retinotopy data\n')
+        fprintf('Unpacking   HCP 7T retinotopy data\n\n')
         fprintf('-------------------------------------------------------\n')
         unzip('data_hcp.zip','data_hcp');
         delete('./data_hcp.zip');

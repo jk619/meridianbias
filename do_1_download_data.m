@@ -13,22 +13,22 @@ if strcmp(str,'Y') || strcmp(str,'y')
         
     else
         
-        disp('-------------------------------------------------------')
-        disp('Downloading HCP 7T retinotopy data - might take a while')
-        disp('-------------------------------------------------------')
+        fprintf('-------------------------------------------------------\n')
+        fprintf('Downloading HCP 7T retinotopy data - might take a while\n')
+        fprintf('-------------------------------------------------------\n')
         
         websave('./data_hcp.zip', 'https://osf.io/tqprz/download',opts);
         
-        disp('Unpacking  HCP 7T retinotopy data')
-        disp('-------------------------------------------------------')
+        fprintf('Unpacking  HCP 7T retinotopy data\n')
+        fprintf('-------------------------------------------------------\n')
         unzip('data_hcp.zip','data_hcp');
         delete('./data_hcp.zip');
         
         
         mkdir('benson_atlas')
         
-        disp('Downloading Benson''s V1 definition')
-        disp('-------------------------------------------------------')
+        fprintf('Downloading Benson''s V1 definition\n')
+        fprintf('-------------------------------------------------------\n')
         websave('./benson_atlas/lh.varea.mgz','https://github.com/noahbenson/neuropythy/raw/master/neuropythy/lib/data/fsaverage/surf/lh.benson14_varea.v4_0.mgz',opts);
         websave('./benson_atlas/rh.varea.mgz','https://github.com/noahbenson/neuropythy/raw/master/neuropythy/lib/data/fsaverage/surf/rh.benson14_varea.v4_0.mgz',opts);
         
@@ -38,9 +38,9 @@ if strcmp(str,'Y') || strcmp(str,'y')
 
             mkdir('data_tdm')
                         
-            disp('-------------------------------------------------------')
-            disp('Downloading TDM data')
-            disp('-------------------------------------------------------')
+            fprintf('-------------------------------------------------------\n')
+            fprintf('Downloading TDM data\n')
+            fprintf('-------------------------------------------------------\n')
             
             websave('./data_tdm/data_tdm.mat', 'https://osf.io/u4x5y/download',opts);
             
@@ -50,13 +50,13 @@ if strcmp(str,'Y') || strcmp(str,'y')
             
         else
             
-            disp('-------------------------------------------------------')
-            disp('Downloading NSD data')
-            disp('-------------------------------------------------------')
+            fprintf('-------------------------------------------------------\n')
+            fprintf('Downloading NSD data\n')
+            fprintf('-------------------------------------------------------\n')
             
             websave('./data_nsd.zip', 'https://osf.io/wc9r7/download',opts);
-            disp('Unpacking  NSD data')
-            disp('-------------------------------------------------------')
+            fprintf('Unpacking   NSD data')
+            fprintf('-------------------------------------------------------\n')
             unzip('./data_nsd.zip');
             delete('./data_nsd.zip');
             

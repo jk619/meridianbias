@@ -1,5 +1,5 @@
 # The influence of non-neural factors on BOLD signal magnitude
-Code from this repository will reproduce the main figures from the paper and save them in the "figures" directory. All scripts are written in MATLAB 2019b and tested on macOS Big Sur (11.5.2).
+Code from this repository will reproduce the main figures from the paper and save them in the "figures" directory as vector graphics. All scripts are written in MATLAB 2019b and tested on macOS Big Sur (11.5.2).
 The code will download the HCP 7T retinotopy data, Benson's V1 definitions, example NSD maps and a preprocessed TDM dataset. If used scripts and toolboxes are not in MATLAB's path (which is most likely) the code can take care of the dependencies and download all of the necessary files. You will be asked in the beginning of the masterscript.m if you want to do that.
 
 ## **Datasets:**
